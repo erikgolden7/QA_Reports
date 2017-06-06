@@ -15,7 +15,9 @@
 	</head>
 	
 	<body ng-controller="homeCtrl">
-	<div class="jolt_logo"></div>
+		<a href="https://joltup.com/">
+			<div class="jolt_logo"></div>
+		</a>
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
 		
 		
@@ -23,18 +25,18 @@
 			<div class="tally_box">
 				<div class="left_tally">
 					<div class="tally_item_top">
-						Today's bugs squished:
-					</div>				<hr/>
-					<div class="tally_item_bottom">
 						Total Catastrophes Averted:
+					</div><hr/>
+					<div class="tally_item_bottom">
+						Bugs Squished Today:
 					</div>
 				</div>
 				<div class="right_tally">
 					<div class="tally_item_top">
-						{{count}}
-					</div>				<hr/>
-					<div class="tally_item_bottom">
 						{{totalCount}}
+					</div><hr/>
+					<div class="tally_item_bottom">
+						{{todayCount}}
 					</div>
 				</div>
 			</div>
