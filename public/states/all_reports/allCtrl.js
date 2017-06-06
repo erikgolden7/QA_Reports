@@ -1,6 +1,6 @@
 angular.module('qaApp').controller('allCtrl', function($scope) {
 	
-	$scope.test = "This is the all view";
+	$scope.test = "Report: All Time";
 	
 	// $scope.htmlEndTime = () => {
 	// 	let date = new Date();

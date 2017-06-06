@@ -10,17 +10,17 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 	})
 	.state('day', {
 		url: '/day',
-		templateUrl: '../states/all_reports/day.html',
+		templateUrl: '../states/day_reports/day.html',
 		controller: 'dayCtrl'
 	})
 	.state('week', {
 		url: '/week',
-		templateUrl: '../states/all_reports/week.html',
+		templateUrl: '../states/week_reports/week.html',
 		controller: 'weekCtrl'
 	})
 	.state('month', {
 		url: '/month',
-		templateUrl: '../states/all_reports/month.html',
+		templateUrl: '../states/month_reports/month.html',
 		controller: 'monthCtrl'
 	})
 	.state('all', {

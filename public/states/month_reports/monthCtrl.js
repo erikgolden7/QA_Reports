@@ -1,6 +1,6 @@
 angular.module('qaApp').controller('monthCtrl', function($scope) {
 	
-	$scope.test = "This is the month view";
+	$scope.test = "Report: This Month";
 	
 	// $scope.htmlEndTime = () => {
 	// 	let date = new Date();

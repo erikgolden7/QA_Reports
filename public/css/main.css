@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Crete+Round|Quicksand');
 
-html {
 	/*font-family: 'Quicksand', sans-serif;*/
 	/*font-family: 'Crete Round', serif;*/
+
+.background {
+	background: url('http://www.publicdomainpictures.net/pictures/130000/velka/white-box-background.jpg') center repeat;
+	background-size: contain;
+	height: 100%;
+	width: 100%;
 	}
 
 /*Top center count box*/
@@ -76,6 +81,7 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font: font-family: 'Quicksand', sans-serif;
 	margin-left: 5px;
 	margin-right: 5px;
 	height: 30px;
