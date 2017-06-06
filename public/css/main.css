@@ -48,10 +48,10 @@
 	width: 300px;
 	height: auto;
 	margin-left: 150px;
-	padding: 5px;
+	padding: 5px 5px 6px 5px;
 	border: solid black 1px;
 	border-radius: 5px;
-	background-color: #fff;
+	background-color: #b1b1b1;
 	}
 
 .menu_item {
@@ -64,14 +64,25 @@
 	width: 100px;
 	padding-left: 5px;
 	padding-right: 5px;
-	border: solid black 1px;
-	border-radius: 5px;
+	background-color: rgb(251, 249, 255);
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-image: linear-gradient(top, #6496c8, #346392);
+	box-shadow: inset 0 -2px 3px -1px #000;
+	border: none;
+	border-radius: 15px;
 	}
 
+.menu_item:hover {
+	background-color: rgb(223, 237, 255); /* Green */
+	color: #424242;
+	box-shadow: inset 0 0 0 1px rgba(60, 128, 185, 0.75),0 2px 2px #282828;
+	}
 
-
-
-
+.menu_item:active {
+	box-shadow: inset 0 0 0 1px #3771a5,inset 0 2px 5px #282828;
+	}
 
 
 
