@@ -14,13 +14,38 @@
 		<link rel="stylesheet" href="./states/all_reports/all.css">
 	</head>
 	
-	<body class="background" ng-controller="homeCtrl">
+	<body ng-controller="homeCtrl">
+	<div class="jolt_logo"></div>
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
+		
+		
+		<div class="background">
+			<div class="tally_box">
+				<div class="left_tally">
+					<div class="tally_item_top">
+						Today's bugs squished:
+					</div>				<hr/>
+					<div class="tally_item_bottom">
+						Total Catastrophes Averted:
+					</div>
+				</div>
+				<div class="right_tally">
+					<div class="tally_item_top">
+						{{count}}
+					</div>				<hr/>
+					<div class="tally_item_bottom">
+						{{totalCount}}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
 		
 		<div class="buttons">
 			<div class="increment" ng-click="increment()"></div>
 			<div class="decrement" ng-click="decrement()"></div>
-			<div class="count"> {{count}} </div>
 		</div>
 		
 		<div class="menu">
