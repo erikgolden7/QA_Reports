@@ -1,4 +1,4 @@
-angular.module('qaReports').controller('weekCtrl', function($scope) {
+angular.module('qaApp').controller('weekCtrl', function($scope) {
 	
 	$scope.test = "This is the week view";
 	

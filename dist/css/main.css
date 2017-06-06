@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Quicksand');
+
+html {
+	/*font-family: 'Quicksand', sans-serif;*/
+	/*font-family: 'Crete Round', serif;*/
+	}
+
+/*Top center count box*/
 .title {
 	text-align: center;
 	font-size: 42px;
-	font-weight: bold;
+	font-weight: 300;
 	margin-top: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
+	text-decoration: underline;
+	font-family: 'Crete Round', serif;
 	}
 
 .buttons {
@@ -11,6 +21,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 60px;
 	}
 
 .increment {
@@ -21,6 +32,11 @@
 	margin-right: 5px;
 	}
 
+.increment:active {
+	border-radius: 50%;
+	box-shadow: inset 3px 3px 50px rgba(106, 255, 62, 0.8);
+	}
+
 .decrement {
 	background: url('../src/down_arrow.png') center no-repeat;
 	background-size: contain;
@@ -28,3 +44,79 @@
 	height: 80px;
 	margin-left: 5px;
 	}
+
+.decrement:active {
+	border-radius: 50%;
+	box-shadow: inset 3px 3px 50px rgba(255, 76, 74, 0.85);
+	}
+
+.count {
+	font-size: 40px;
+	font-weight: 500;
+	margin-left: 30px;
+	}
+
+
+/*Menu Box*/
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: auto;
+	margin-left: 10%;
+	padding: 5px 5px 6px 5px;
+	border: gray solid 0.5px;
+	border-radius: 7px;
+	background-color: #eaeaea;
+	}
+
+.menu_item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	height: 30px;
+	width: 100px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: rgb(251, 249, 255);
+	-webkit-transition-duration: 0.2s; /* Safari */
+	transition-duration: 0.2s;
+	cursor: pointer;
+	background-image: linear-gradient(top, #6496c8, #346392);
+	box-shadow: inset 0 -2px 3px -1px #000;
+	border: gray solid 0.5px;
+	border-radius: 15px;
+	}
+
+.menu_item:hover {
+	background-color: rgba(79, 159, 255, 0.91); /* Green */
+	color: #fff;
+	box-shadow: inset 0 0 0 0.2px rgba(98, 98, 98, 0.75),0 2px 2px #282828;
+	}
+
+.menu_item:active {
+	box-shadow: inset 0 0 0 1px #3771a5,inset 0 2px 5px #282828;
+	}
+
+
+/*Reports Box*/
+.outer_box {
+	display: flex;
+	justify-content: center;
+	width: auto;
+	height: 600px;
+	border: gray solid 0.5px;
+	border-radius: 7px;
+	margin: 5px 10% 20px 10%;
+	background-color: #eaeaea;
+	}
+
+
+
+
+
+

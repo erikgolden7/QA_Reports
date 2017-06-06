@@ -1,4 +1,4 @@
-angular.module('qaReports').controller('monthCtrl', function($scope) {
+angular.module('qaApp').controller('monthCtrl', function($scope) {
 	
 	$scope.test = "This is the month view";
 	

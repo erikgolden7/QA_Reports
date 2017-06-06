@@ -1,4 +1,4 @@
-angular.module('qaReports').controller('dayCtrl', function($scope) {
+angular.module('qaApp').controller('dayCtrl', function($scope) {
 	
 	$scope.test = "This is the day view";
 	

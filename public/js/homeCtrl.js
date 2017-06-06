@@ -1,6 +1,6 @@
-angular.module('qaReports').controller('homeCtrl', function($scope) {
+angular.module('qaApp').controller('homeCtrl', function($scope) {
 	
-	$scope.test = "This is the home view";
+	$scope.test = 7;
 	
 	// $scope.htmlEndTime = () => {
 	// 	let date = new Date();

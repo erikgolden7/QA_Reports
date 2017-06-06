@@ -1,4 +1,4 @@
-angular.module('qaReports').controller('allCtrl', function($scope) {
+angular.module('qaApp').controller('allCtrl', function($scope) {
 	
 	$scope.test = "This is the all view";
 	
