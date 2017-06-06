@@ -1,0 +1,30 @@
+{
+  "name": "qa_reports",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikgolden7/QA_Reports.git"
+  },
+  "author": "Erik Golden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikgolden7/QA_Reports/issues"
+  },
+  "homepage": "https://github.com/erikgolden7/QA_Reports#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cachebust": "0.0.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-print": "^2.0.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "sweetalert": "^1.1.3"
+  }
+}
