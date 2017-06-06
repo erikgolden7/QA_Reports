@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Crete+Round|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Overlock+SC');
 
 	/*font-family: 'Quicksand', sans-serif;*/
 	/*font-family: 'Crete Round', serif;*/
+	/*font-family: 'Faster One', cursive;*/
+	/*font-family: 'Overlock SC', cursive;*/
 
 .background {
-	background: url('http://www.publicdomainpictures.net/pictures/130000/velka/white-box-background.jpg') center repeat;
+	background: url('../src/white-box-background.jpg') center repeat;
 	background-size: contain;
 	height: 100%;
 	width: 100%;
 	}
 
 /*Top center count box*/
-.title {
+.main_title {
 	text-align: center;
-	font-size: 42px;
-	font-weight: 300;
+	font-size: 48px;
 	margin-top: 20px;
-	margin-bottom: 60px;
-	text-decoration: underline;
-	font-family: 'Crete Round', serif;
+	margin-bottom: 5px;
+	font-family: 'Overlock SC', cursive;
 	}
 
 .buttons {
@@ -26,7 +27,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 60px;
+	margin-bottom: 50px;
 	}
 
 .increment {
@@ -34,7 +35,8 @@
 	background-size: contain;
 	width: 80px;
 	height: 80px;
-	margin-right: 5px;
+	margin-top: 60px;
+	margin-right: 7px;
 	}
 
 .increment:active {
@@ -48,6 +50,8 @@
 	width: 80px;
 	height: 80px;
 	margin-left: 5px;
+	margin-right: 50px;
+	margin-top: 60px;
 	}
 
 .decrement:active {
@@ -56,9 +60,9 @@
 	}
 
 .count {
-	font-size: 40px;
+	font-size: 50px;
 	font-weight: 500;
-	margin-left: 30px;
+	margin-top: 60px;
 	}
 
 
@@ -71,7 +75,7 @@
 	width: 300px;
 	height: auto;
 	margin-left: 10%;
-	padding: 5px 5px 6px 5px;
+	padding: 6px 6px 7px 6px;
 	border: gray solid 0.5px;
 	border-radius: 7px;
 	background-color: #eaeaea;
@@ -81,7 +85,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font: font-family: 'Quicksand', sans-serif;
 	margin-left: 5px;
 	margin-right: 5px;
 	height: 30px;
@@ -114,14 +117,18 @@
 	display: flex;
 	justify-content: center;
 	width: auto;
-	height: 600px;
+	height: 560px;
 	border: gray solid 0.5px;
 	border-radius: 7px;
-	margin: 5px 10% 20px 10%;
+	margin: 5px 10% 0 10%;
 	background-color: #eaeaea;
 	}
 
-
+.report_title {
+	padding: 10px;
+	font-size: 32px;
+	font-weight: 400;
+	}
 
 
 

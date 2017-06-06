@@ -1,6 +1,6 @@
 angular.module('qaApp').controller('dayCtrl', function($scope) {
 	
-	$scope.test = "Report: Today";
+	$scope.test = "Reports: Today";
 	
 	// $scope.htmlEndTime = () => {
 	// 	let date = new Date();
