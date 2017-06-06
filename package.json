@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/erikgolden7/QA_Reports#readme",
   "dependencies": {
+    "angular-route": "^1.6.4",
     "body-parser": "^1.17.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
