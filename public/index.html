@@ -15,10 +15,13 @@
 		<div class="buttons">
 			<div class="increment" ng-click="increment++"></div>
 			<div class="decrement" ng-click="decrement--"></div>
-			<div class="count"> {{count}} </div>
+			<div class="count"> {{test}} </div>
 		</div>
-		<div>
-			<div></div>
+		<div class="menu">
+			<div ui-sref="day" class="menu_item">Day</div>
+			<div ui-sref="week" class="menu_item">Week</div>
+			<div ui-sref="month" class="menu_item">Month</div>
+			<div ui-sref="all" class="menu_item">All</div>
 		</div>
 		
 		

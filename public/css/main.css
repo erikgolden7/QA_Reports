@@ -1,9 +1,10 @@
+/*Top center count box*/
 .title {
 	text-align: center;
 	font-size: 42px;
 	font-weight: 600;
 	margin-top: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 80px;
 	text-decoration: underline;
 	}
 
@@ -12,6 +13,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 80px;
 	}
 
 .increment {
@@ -35,3 +37,47 @@
 	font-weight: bold;
 	margin-left: 30px;
 	}
+
+
+/*Menu Box*/
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: auto;
+	margin-left: 150px;
+	padding: 5px;
+	border: solid black 1px;
+	border-radius: 5px;
+	background-color: #fff;
+	}
+
+.menu_item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	height: 30px;
+	width: 100px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: solid black 1px;
+	border-radius: 5px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

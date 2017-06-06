@@ -1,6 +1,6 @@
 angular.module('qaReports').controller('weekCtrl', function($scope) {
 	
-	$scope.day = "This is the day view";
+	$scope.test = "This is the week view";
 	
 	// $scope.htmlEndTime = () => {
 	// 	let date = new Date();
