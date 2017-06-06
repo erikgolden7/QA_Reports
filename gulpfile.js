@@ -29,7 +29,6 @@ gulp.task('build-js', [], function() {
 	return gulp.src(['./public/**/*.js'])
 	.pipe(sourcemaps.init())
 	// .pipe(print())
-	.pipe(babel({presets: ['es2015']}))
 	.pipe(concat('bundle.js'))
 	//.pipe(uglify())
 	.pipe(sourcemaps.write('./'))
@@ -44,6 +43,11 @@ gulp.task('build-scripts', function(){
 gulp.task('move-images', function(){
 	return gulp.src(['./public/images/**/*.png','./public/images/**/*.svg', './public/images/**/*.jpg', './public/images/**/*.gif'])
 	.pipe(gulp.dest('./dist/images'))
+});
+
+gulp.task('move-fonts', function(){
+	return gulp.src(['./public/**/*.woff','./public/**/*.woff2', './public/**/*.ttf'])
+	.pipe(gulp.dest('./dist/fonts/roboto'))
 });
 
 gulp.task('move-html', function(){
