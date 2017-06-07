@@ -16,27 +16,29 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 	};
 	
 	
-	this.increment = (today, total, date) => {
-		console.log(today, total, date);
+	this.increment = (today, total, day, month) => {
+		console.log(today, total, day, month);
 		return $http({
 			method: 'PUT',
 			url: '/incrementCount',
 			data: {
 				'today' : today,
 				'total' : total,
-				'date' : date
+				'day' : day,
+				'month' : month
 			}
 		})
 	};
 
-	this.decrement = (today, total, date) => {
+	this.decrement = (today, total, day, month) => {
 		return $http({
 			method: 'PUT',
 			url: '/decrementCount',
 			data: {
 				'today' : today,
 				'total' : total,
-				'date' : date
+				'day' : day,
+				'month' : month
 			}
 		})
 	};

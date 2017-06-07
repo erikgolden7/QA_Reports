@@ -3,7 +3,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, homeService) {
 	
 	const max = 99999;
 	const min = 0;
-	
+
 	
 	let getTodayCount = () => {
 		homeService.getTodayCount().then(function(res, err){
@@ -11,7 +11,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, homeService) {
 		});
 	};
 	getTodayCount();
-	
 	
 	let getTotalCount = () => {
 		homeService.getTotalCount().then(function(res, err){
@@ -23,13 +22,15 @@ angular.module('qaApp').controller('homeCtrl', function($scope, homeService) {
 	
 	
 	$scope.increment = () => {
-		const date = new Date();
+		let date = new Date;
+		let day = date.getDate(); //day of the month (1-31)
+		let month = date.getMonth(); //month of the year (0-11)
 		if ($scope.todayCount >= max) {
 			return;
 		}
 		$scope.todayCount++;
 		$scope.totalCount++;
-		homeService.increment($scope.todayCount, $scope.totalCount, date);
+		homeService.increment($scope.todayCount, $scope.totalCount, $scope.day, $scope.month);
 	};
 	
 	$scope.decrement = () => {

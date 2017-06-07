@@ -44,6 +44,11 @@ app.put('/decrementCount', function(req, res) {
 	})
 });
 
+app.get('/getDayData', function(req, res) {
+	db.getDayData(function(err, data) {
+		res.send(data);
+	})
+});
 
 
 var port = 3000;
