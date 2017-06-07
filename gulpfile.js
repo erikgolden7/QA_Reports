@@ -1,4 +1,4 @@
-//npm install --save gulp gulp-concat gulp-sass gulp-sourcemaps gulp-print gulp-babel gulp-cachebust
+// npm install --save gulp gulp-concat gulp-sass gulp-sourcemaps gulp-print gulp-babel gulp-cachebust
 
 var gulp = require('gulp'),
 	concat = require('gulp-concat'),

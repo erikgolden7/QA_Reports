@@ -1,0 +1,1 @@
+select dayCount from count WHERE id = 1;

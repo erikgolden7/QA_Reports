@@ -1,56 +1,45 @@
 
-angular.module('qaApp').controller('homeCtrl', function($scope) {
+angular.module('qaApp').controller('homeCtrl', function($scope, homeService) {
 	
-	// $scope.todayCount = 0;
-	$scope.totalCount = 0;
-	
-	// let getTodayCount = () => {
-	// 	homeService.getTodayCount().then(function(res){
-	// 		$scope.todayCount = res.data;
-	// 	});
-	// };
-	// getTodayCount();
-	//
-	// let getTotalCount = () => {
-	// 	homeService.getTotalCount().then(function(res){
-	// 		$scope.totalCount = res.data;
-	// 	});
-	// };
-	// getTotalCount();
+	const max = 99999;
+	const min = 0;
 	
 	
-	$scope.todayCount = 0;
-	let max = $scope.todayCount + 99999;
-	let min = $scope.todayCount;
+	let getTodayCount = () => {
+		homeService.getTodayCount().then(function(res, err){
+			$scope.todayCount = res.data[0].daycount;
+		});
+	};
+	getTodayCount();
 	
-	$scope.increment = function() {
-		if ($scope.todayCount >= max) { return; }
+	
+	let getTotalCount = () => {
+		homeService.getTotalCount().then(function(res, err){
+			console.log("homeCtrl", res, err);
+			$scope.totalCount = res.data[0].totalcount;
+		});
+	};
+	getTotalCount();
+	
+	
+	$scope.increment = () => {
+		const date = new Date();
+		if ($scope.todayCount >= max) {
+			return;
+		}
 		$scope.todayCount++;
 		$scope.totalCount++;
+		homeService.increment($scope.todayCount, $scope.totalCount, date);
 	};
-	$scope.decrement = function() {
-		if ($scope.todayCount <= min) { return; }
+	
+	$scope.decrement = () => {
+		const date = new Date();
+		if ($scope.todayCount <= min) {
+			return;
+		}
 		$scope.todayCount--;
 		$scope.totalCount--;
+		homeService.decrement($scope.todayCount, $scope.totalCount, date);
 	};
-	
-	
-	
-	
-	// $scope.increment = () => {
-	// 	// let date = new Date();
-	// 	// homeService.increment(count, date);
-	// 	todayCount++;
-	// 	console.log(todayCount);
-	// 	return todayCount;
-	// };
-	//
-	// $scope.decrement = (todayCount) => {
-	// 	// let date = new Date();
-	// 	// homeService.decrement(count, date);
-	// 	todayCount--;
-	// 	return todayCount;
-	// };
-	
 	
 });

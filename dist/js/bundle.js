@@ -58,18 +58,6 @@ angular.module('qaApp').controller('dayCtrl', function($scope) {
 });
 
 
-
-angular.module('qaApp').controller('homeCtrl', function($scope) {
-	
-	$scope.count = 7;
-	
-	$scope.htmlEndTime = () => {
-		let date = new Date();
-		assessmentService.htmlEndTime($scope.user.id, date);
-		$scope.stop1 = false;
-	};
-	
-});
 angular.module('qaApp').controller('monthCtrl', function($scope) {
 	
 	$scope.test = "Reports: This Month";
@@ -84,6 +72,86 @@ angular.module('qaApp').controller('monthCtrl', function($scope) {
 
 
 
+
+angular.module('qaApp').controller('homeCtrl', function($scope, homeService) {
+	
+	$scope.totalCount = 0;
+	$scope.todayCount = 0;
+	
+	$scope.increment = () => {
+		const date = new Date();
+		$scope.todayCount++;
+		$scope.totalCount++;
+		homeService.increment($scope.todayCount, $scope.totalCount, date);
+	};
+	
+	$scope.decrement = () => {
+		const date = new Date();
+		$scope.todayCount--;
+		$scope.totalCount--;
+		homeService.decrement($scope.todayCount, $scope.totalCount, date);
+	};
+	
+	
+	
+	let getTodayCount = () => {
+		homeService.getTodayCount().then(function(res){
+			$scope.todayCount = res.data;
+		});
+	};
+	getTodayCount();
+
+	let getTotalCount = () => {
+		homeService.getTotalCount().then(function(res){
+			$scope.totalCount = res.data;
+		});
+	};
+	getTotalCount();
+
+	
+});
+angular.module('qaApp').service('homeService', function($http, $q) {
+
+	this.increment = (today, total, date) => {
+		console.log(today, total, date);
+		return $http({
+			method: 'POST',
+			url: '/incrementCount',
+			data: {
+				'today' : today,
+				'total' : total,
+				'date' : date
+			}
+		})
+	};
+
+	this.decrement = (today, total, date) => {
+		return $http({
+			method: 'POST',
+			url: '/decrementCount',
+			data: {
+				'today' : today,
+				'total' : total,
+				'date' : date
+			}
+		})
+	};
+	
+	this.getTodayCount = function() {
+		return $http ({
+			method: 'GET',
+			url: '/getTodayCount'
+		})
+	};
+	
+	this.getTotalCount = function() {
+		return $http ({
+			method: 'GET',
+			url: '/getTotalCount'
+		})
+	};
+
+});
 angular.module('qaApp').controller('weekCtrl', function($scope) {
 	
 	$scope.test = "Reports: This Week";

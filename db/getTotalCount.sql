@@ -1,0 +1,1 @@
+select totalCount from count WHERE id = 1;

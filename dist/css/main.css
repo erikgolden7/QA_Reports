@@ -6,20 +6,67 @@
 	/*font-family: 'Faster One', cursive;*/
 	/*font-family: 'Overlock SC', cursive;*/
 
-.background {
-	background: url('../src/white-box-background.jpg') center repeat;
+
+.jolt_logo {
+	position: absolute;
+	top: 7px;
+	left: 8px;
+	background: url('../src/jolt_logo.png') center no-repeat;
 	background-size: contain;
-	height: 100%;
-	width: 100%;
+	width: 90px;
+	height: 60px;
+	margin-left: 7px;
 	}
 
 /*Top center count box*/
 .main_title {
 	text-align: center;
 	font-size: 48px;
-	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	font-family: 'Overlock SC', cursive;
+	}
+
+/*Top Center Tally Boxes*/
+.background {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-size: contain;
+	height: 100%;
+	width: 100%;
+	}
+
+.tally_box {
+	margin: 10px 0 10px 0;
+	font-size: 28px;
+	width: 600px;
+	padding: 5px;
+	border: solid #818181 0.5px;
+	border-radius: 5px;
+	background-color: #e1ebe0;
+	}
+
+.left_tally {
+	float: left;
+	width: 70%;
+	height: 100%;
+	}
+
+.right_tally {
+	text-align: center;
+	float: left;
+	width: 30%;
+	height: 100%;
+	}
+
+.tally_item_top {
+	padding: 10px 10px 0 25px;
+	}
+
+.tally_item_bottom {
+	padding: 0 10px 10px 25px;
 	}
 
 .buttons {
@@ -27,44 +74,39 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 60px;
+	margin: 10px 0 10px 0;
 	}
 
 .increment {
-	background: url('../src/up_arrow.png') center no-repeat;
+	background: url('../src/Jolt_left.jpg') center no-repeat;
 	background-size: contain;
-	width: 80px;
-	height: 80px;
-	margin-top: 55px;
-	margin-right: 7px;
+	width: 25px;
+	height: 70px;
 	}
 
 .increment:active {
-	border-radius: 50%;
-	box-shadow: inset 3px 3px 50px rgba(106, 255, 62, 0.8);
+	box-shadow: inset 3px 3px 50px rgba(106, 255, 62, 0.2);
+	/*border-radius: 10px;*/
 	}
 
 .decrement {
-	background: url('../src/down_arrow.png') center no-repeat;
+	background: url('../src/Jolt_right.jpg') center no-repeat;
 	background-size: contain;
-	width: 80px;
-	height: 80px;
-	margin-left: 5px;
-	margin-right: 50px;
-	margin-top: 55px;
+	width: 25px;
+	height: 70px;
+	margin-left: 3px;
 	}
 
 .decrement:active {
-	border-radius: 50%;
-	box-shadow: inset 3px 3px 50px rgba(255, 76, 74, 0.85);
+	box-shadow: inset 3px 3px 50px rgba(255, 76, 74, 0.2);
+	/*border-radius: 10px;*/
 	}
 
 .count {
 	font-size: 50px;
 	font-weight: 500;
-	margin-top: 55px;
+	margin-top: 10px;
 	}
-
 
 /*Menu Box*/
 .menu {
@@ -75,10 +117,11 @@
 	width: 300px;
 	height: auto;
 	margin-left: 10%;
-	padding: 5px 5px 6px 5px;
+	padding: 6px 6px 7px 6px;
 	border: gray solid 0.5px;
 	border-radius: 7px;
-	background-color: #eaeaea;
+	background-color: #ebebeb;
+	z-index: 1;
 	}
 
 .menu_item {
@@ -89,28 +132,26 @@
 	margin-right: 5px;
 	height: 30px;
 	width: 100px;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-color: rgb(251, 249, 255);
-	-webkit-transition-duration: 0.2s; /* Safari */
-	transition-duration: 0.2s;
+	padding: 0 5px 3px 5px;
+	font-weight: 600;
 	cursor: pointer;
-	background-image: linear-gradient(top, #6496c8, #346392);
+	background: linear-gradient(top, #6496c8, #346392);
+	background-color: white;
 	box-shadow: inset 0 -2px 3px -1px #000;
-	border: gray solid 0.5px;
+	border: gray solid 1px;
 	border-radius: 15px;
+	z-index: 3;
 	}
 
 .menu_item:hover {
-	background-color: rgba(79, 159, 255, 0.91); /* Green */
+	background-color: rgba(52, 106, 207, 0.91);
 	color: #fff;
-	box-shadow: inset 0 0 0 0.2px rgba(98, 98, 98, 0.75),0 2px 2px #282828;
+	box-shadow: inset 0 0 0 1px rgba(98, 98, 98, 0.75),0 2px 2px #282828;
 	}
 
 .menu_item:active {
 	box-shadow: inset 0 0 0 1px #3771a5,inset 0 2px 5px #282828;
 	}
-
 
 /*Reports Box*/
 .outer_box {
@@ -118,10 +159,10 @@
 	justify-content: center;
 	width: auto;
 	height: 560px;
-	border: gray solid 0.5px;
+	border: gray solid 1px;
 	border-radius: 7px;
-	margin: 5px 10% 20px 10%;
-	background-color: #eaeaea;
+	margin: 5px 10% 0 10%;
+	background-color: #cedbeb;
 	}
 
 .report_title {

@@ -1,12 +1,13 @@
 angular.module('qaApp').service('homeService', function($http, $q) {
 	
+	
 	this.getTodayCount = function() {
 		return $http ({
 			method: 'GET',
 			url: '/getTodayCount'
 		})
 	};
-	
+
 	this.getTotalCount = function() {
 		return $http ({
 			method: 'GET',
@@ -14,23 +15,27 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 		})
 	};
 	
-	this.increment = (count, date) => {
+	
+	this.increment = (today, total, date) => {
+		console.log(today, total, date);
 		return $http({
 			method: 'PUT',
-			url: '/updateCounter',
+			url: '/incrementCount',
 			data: {
-				'count' : count,
+				'today' : today,
+				'total' : total,
 				'date' : date
 			}
 		})
 	};
-	
-	this.decrement = (count, date) => {
+
+	this.decrement = (today, total, date) => {
 		return $http({
 			method: 'PUT',
-			url: '/updateCounter',
+			url: '/decrementCount',
 			data: {
-				'count' : count,
+				'today' : today,
+				'total' : total,
 				'date' : date
 			}
 		})
