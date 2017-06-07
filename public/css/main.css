@@ -74,7 +74,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin: 10px 0 10px 0;
+	margin: 10px 0 0 0;
 	}
 
 .increment {
@@ -156,13 +156,15 @@
 /*Reports Box*/
 .outer_box {
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	width: auto;
-	height: 560px;
+	height: 550px;
 	border: gray solid 1px;
 	border-radius: 7px;
 	margin: 5px 10% 0 10%;
 	background-color: #cedbeb;
+	padding: 20px;
 	}
 
 .report_title {
