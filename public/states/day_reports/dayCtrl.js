@@ -21,8 +21,6 @@ angular.module('qaApp').controller('dayCtrl', function($scope) {
 	let day2 = date.getDate(); //day of the month (1-31)
 	let month = date.getMonth(); //month of the year (0-11)
 	
-	console.log(day, day2, month); //3, 7, 5
-	
 	
 	
 	

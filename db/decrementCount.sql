@@ -1,3 +1,3 @@
-DELETE FROM bugs
-WHERE day = $1
-LIMIT 1;
+Update bugs
+SET active = 'false'
+WHERE id = (select MAX(id) from bugs)

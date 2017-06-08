@@ -19,9 +19,9 @@ const db = app.get('db');
 
 
 app.get('/getTodayCount', function(req, res) {
-	console.log(req.query.day, req.query.month, req.query.year);
+	// console.log(req.query.day, req.query.month, req.query.year);
 	db.getTodayCount([req.query.day, req.query.month, req.query.year], function(err, data) {
-		console.log("today count", data, err);
+		// console.log("today count", data, err);
 		res.send(data);
 	})
 });
@@ -39,27 +39,33 @@ app.post('/incrementCount', function(req, res) {
 	})
 });
 
-app.delete('/decrementCount', function(req, res) {
-	console.log("server");
-	db.decrementCount(function (err, res) {
-		if (!err) {
-			console.log("removed");
-			res.send(status(200))
-		}
-		else {
-			console.log(err);
-		}
+app.post('/decrementCount', function(req, res) {
+	db.decrementCount([req.body.today, req.body.total, req.body.day, req.body.month, req.body.year, req.body.hour], (err, result) => {
+		res.send(result)
 	})
 });
 
-// app.get('/getDayData', function(req, res) {
-// 	db.getDayData(function(err, data) {
-// 		res.send(data);
+// app.post('/decrementCount', function(req, res) {
+// 	db.decrementCount([req.query.total], (err, res) => {
+// 		console.log(res, err);
+// 		// if (!err) {
+// 		// 	console.log("removed");
+// 		// 	res.send(status(200))
+// 		// }
+// 		// else {
+// 		// 	console.log(err);
+// 		// }
 // 	})
 // });
 
+app.get('/getDayData', (req, res) => {
+	db.getDayData((err, data) => {
+		res.send(data);
+	})
+});
 
-var port = 3000;
+
+const port = 3000;
 app.listen(port, function() {
 	console.log('Listening to port:', port)
 });

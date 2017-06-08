@@ -1,1 +1,2 @@
-select count(*) from bugs;
+SELECT count(*) FROM bugs
+WHERE active = 'true';
