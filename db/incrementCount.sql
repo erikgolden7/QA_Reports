@@ -1,5 +1,3 @@
-UPDATE count
-SET dayCount = $1,
-    totalCount = $2,
-    date = $3
-WHERE id = 1;
+INSERT INTO bugs
+(dayCount, totalCount, day, month, year, hour)
+VALUES ($1, $2, $3, $4, $5, $6);

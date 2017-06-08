@@ -12,7 +12,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope) {
 			datasets: [{
 				label: 'Bugs Found',
 				data: [32, 659, 343, 386, 274, 533, 213, 353, 27, 345, 346, 33, 324, 659, 343, 386, 274, 733, 213, 353, 27, 345, 246, 33, 32, 659, 343, 486, 274, 533, 213],
-				backgroundColor: 'rgba(120,170,100,.3)',
+				backgroundColor: 'rgba(72,126,173,.3)',
 				borderColor: 'rgba(108,108,108,1)',
 				borderWidth: 1
 			}]

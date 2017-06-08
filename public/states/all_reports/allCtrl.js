@@ -18,7 +18,7 @@ angular.module('qaApp').controller('allCtrl', function($scope) {
 			datasets: [{
 				label: 'Bugs Found',
 				data: [12, 19, 3, 78, 2, 73, 123, 53, 7, 35, 66, 4],
-				backgroundColor: 'rgba(120,170,100,.3)',
+				backgroundColor: 'rgba(72,126,173,.3)',
 				borderColor: 'rgba(108,108,108,1)',
 				borderWidth: 1
 			}]

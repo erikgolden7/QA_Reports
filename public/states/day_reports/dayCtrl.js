@@ -47,7 +47,7 @@ angular.module('qaApp').controller('dayCtrl', function($scope) {
 			datasets: [{
 				label: 'Bugs Found',
 				data: [2, 159, 343, 486, 274, 433, 413, 553, 447, 355, 646, 443, 244, 159, 343, 386, 524, 733, 413, 553, 447, 355, 646, 43],
-				backgroundColor: 'rgba(120,170,100,.3)',
+				backgroundColor: 'rgba(72,126,173,.3)',
 				borderColor: 'rgba(108,108,108,1)',
 				borderWidth: 1
 			}]

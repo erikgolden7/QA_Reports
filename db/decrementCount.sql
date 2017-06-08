@@ -1,5 +1,3 @@
-UPDATE count
-SET dayCount = $1,
-    totalCount = $2,
-    date = $3
-WHERE id = 1;
+DELETE FROM bugs
+WHERE day = $1
+LIMIT 1;
