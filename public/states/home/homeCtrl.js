@@ -7,7 +7,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	const month = date.getMonth(); //month of the year (0-11)
 	const hour = date.getHours(); //Hour time (0-23)
 	const year = date.getFullYear(); //4 digit year
-
+	
 	
 	let getTodayCount = (day, month, year) => {
 		homeService.getTodayCount(day, month, year).then(function(res, err){
@@ -19,7 +19,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	let getTotalCount = () => {
 		homeService.getTotalCount().then(function(res, err){
-			// console.log("homeCtrl", res, err);
 			$rootScope.totalCount = res.data[0].count;
 			console.log(res.data[0].count);
 		});
@@ -41,30 +40,13 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	};
 	
 	$scope.decrement = () => {
-		const date = new Date;
-		const day = date.getDate(); //day of the month (1-31)
-		const month = date.getMonth(); //month of the year (0-11)
-		const hour = date.getHours(); //Hour time (0-23)
-		const year = date.getFullYear(); //4 digit year
 		if ($scope.todayCount <= min) {
 			return;
 		}
 		$scope.todayCount--;
 		$scope.totalCount--;
-		homeService.decrement($scope.todayCount, $scope.totalCount, day, month, year, hour);
+		homeService.decrement();
 	};
-	
-	// $scope.decrement = () => {
-	// 	const date = new Date();
-	// 	if ($scope.todayCount <= min) {
-	// 		return;
-	// 	}
-	// 	$scope.todayCount--;
-	// 	$scope.totalCount--;
-	// 	homeService.decrement($scope.todayCount, $scope.totalCount, date);
-	// };
-	
-	
 	
 	//Popup Information Modal
 	const modal = document.getElementById('popup');
@@ -80,7 +62,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	};
 
 	window.onclick = function(event) {
-		if (event.target == modal) {
+		if (event.target === popup) {
 			modal.style.display = "none";
 		}
 	}

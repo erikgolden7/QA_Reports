@@ -12,5 +12,6 @@
     <orderEntry type="library" name="angular-animate" level="application" />
     <orderEntry type="library" name="angular-route" level="application" />
     <orderEntry type="library" name="Chart.bundle" level="application" />
+    <orderEntry type="library" name="Chart.bundle" level="application" />
   </component>
 </module>

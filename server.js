@@ -6,12 +6,8 @@ const config = require('./config.js');
 const app = module.exports = express();
 app.use(bodyParser.json());
 
-
 app.use(express.static(__dirname + '/public'));
 
-/////////////
-// DATABASE //
-/////////////
 const massiveInstance = massive.connectSync({connectionString: `postgres://${config.postgresUser}:${config.postgresPass}@localhost/qa_reports`});
 
 app.set('db', massiveInstance);
@@ -19,16 +15,13 @@ const db = app.get('db');
 
 
 app.get('/getTodayCount', function(req, res) {
-	// console.log(req.query.day, req.query.month, req.query.year);
 	db.getTodayCount([req.query.day, req.query.month, req.query.year], function(err, data) {
-		// console.log("today count", data, err);
 		res.send(data);
 	})
 });
 
 app.get('/getTotalCount', function(req, res) {
 	db.getTotalCount(function(err, count) {
-		// console.log(count[0].totalcount, err);
 		res.send(count);
 	})
 });
@@ -39,30 +32,12 @@ app.post('/incrementCount', function(req, res) {
 	})
 });
 
-app.post('/decrementCount', function(req, res) {
-	db.decrementCount([req.body.today, req.body.total, req.body.day, req.body.month, req.body.year, req.body.hour], (err, result) => {
-		res.send(result)
+app.delete('/decrementCount', function(req, res) {
+	db.decrementCount( (err, result) => {
+		res.send("it worked")
 	})
 });
 
-// app.post('/decrementCount', function(req, res) {
-// 	db.decrementCount([req.query.total], (err, res) => {
-// 		console.log(res, err);
-// 		// if (!err) {
-// 		// 	console.log("removed");
-// 		// 	res.send(status(200))
-// 		// }
-// 		// else {
-// 		// 	console.log(err);
-// 		// }
-// 	})
-// });
-
-app.get('/getDayData', (req, res) => {
-	db.getDayData((err, data) => {
-		res.send(data);
-	})
-});
 
 
 const port = 3000;
