@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
-const massiveInstance = massive.connectSync({connectionString: `postgresql://${config.postgresUser}:${config.postgresPass}@localhost:5432/qa_reports`});
+const massiveInstance = massive.connectSync({connectionString: `postgres://${config.postgresUser}:${config.postgresPass}@pellefant.db.elephantsql.com/${config.postgresUser}`});
 
 app.set('db', massiveInstance);
 const db = app.get('db');
