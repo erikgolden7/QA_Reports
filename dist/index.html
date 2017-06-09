@@ -15,9 +15,29 @@
 	</head>
 	
 	<body ng-controller="homeCtrl">
-		<a href="https://joltup.com/">
+		<a target="_blank" href="https://joltup.com/">
 			<div class="jolt_logo"></div>
 		</a>
+		
+		
+		<div id="info" class="information"></div>
+		<div id="popup" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span><br/>
+				<h1 class="popup_header">Information</h1>
+				<p class="popup_center">QA Bug Reports is intended to help QA monitor the number of bugs discovered. The count can be incremented and decremented using the jolt arrows in the center of the page. Line graph reports for daily, weekly, monthly, and all time bug statistics are available at the bottom. </p><br>
+				<p><span class="popup_bold">Total Catastrophes Averted:</span> All time cumulative count of bugs discovered.</p><br>
+				<p><span class="popup_bold">Bugs Squished Today:</span> Bug count for the current day.</p><br>
+				<p><span class="popup_bold">Daily Reports:</span> Daily reports are represented by 24 hours in a day.</p><br>
+				<p><span class="popup_bold">Weekly Reports:</span> Weekly reports are represented by days of the week.</p><br>
+				<p><span class="popup_bold">Monthly Reports:</span> Monthly reports are represented by 31 days in a month</p><br>
+				<p><span class="popup_bold">All Time Reports:</span> All time reports is represented by 12 months in a year.</p><br>
+			</div>
+		</div>
+		
+		
+		
+		<!--<btn class="information" id="myModal"></btn>-->
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
 		
 		
@@ -41,9 +61,6 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
 		
 		<div class="buttons">
 			<div class="increment" ng-click="increment()"></div>
@@ -70,6 +87,7 @@
 		<script src="./states/month_reports/monthCtrl.js"></script>
 		<script src="./states/all_reports/allCtrl.js"></script>
 		<script src="./states/home/homeService.js"></script>
-		<script src="../config.js"></script>
+		<script src="./states/home/homeService.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
 	</body>
 </html>
