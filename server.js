@@ -40,7 +40,6 @@ app.delete('/decrementCount', function(req, res) {
 
 
 
-const port = config.port;
-app.listen(port, function() {
-	console.log('Listening to port:', port)
+app.listen(config.port, function() {
+	console.log('Listening to port:', config.port)
 });
