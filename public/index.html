@@ -42,22 +42,14 @@
 		
 		
 		<div class="background">
-			<div class="tally_box">
-				<div class="left_tally">
-					<div class="tally_item_top">
-						Total Catastrophes Averted:
-					</div><hr/>
-					<div class="tally_item_bottom">
-						Bugs Squished Today:
-					</div>
+			<div ng-cloak class="tally_box">
+				<div class="tally_item_top">
+					<div> Total Catastrophes Averted:</div>
+					<div>{{totalCount}}</div>
 				</div>
-				<div ng-cloak class="right_tally">
-					<div class="tally_item_top">
-						{{totalCount}}
-					</div><hr/>
-					<div class="tally_item_bottom">
-						{{todayCount}}
-					</div>
+				<div class="tally_item_bottom">
+					<div>Bugs Squished Today:</div>
+					<div>{{todayCount}}</div>
 				</div>
 			</div>
 		</div>

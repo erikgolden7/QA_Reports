@@ -138,25 +138,19 @@ canvas{
 	background-color: #e1ebe0;
 	}
 
-.left_tally {
-	float: left;
-	width: 70%;
-	height: 100%;
-	}
-
-.right_tally {
-	text-align: center;
-	float: left;
-	width: 30%;
-	height: 100%;
-	}
-
 .tally_item_top {
-	padding: 10px 10px 0 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 12px 45px 12px 45px;
+	border-bottom: solid 1px gray;
 	}
 
 .tally_item_bottom {
-	padding: 0 10px 10px 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 12px 45px 12px 45px;
 	}
 
 .buttons {
