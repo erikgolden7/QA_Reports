@@ -13,11 +13,11 @@ const massiveInstance = massive.connectSync({connectionString: `postgres://${con
 app.set('db', massiveInstance);
 const db = app.get('db');
 
-db.createTable([],(err, result) => {
-	if(err){
-		console.log(err);
-	}
-});
+// db.createTable([],(err, result) => {
+// 	if(err){
+// 		console.log(err);
+// 	}
+// });
 
 app.get('/getTodayCount', function(req, res) {
 	db.getTodayCount([req.query.day, req.query.month, req.query.year], function(err, data) {
