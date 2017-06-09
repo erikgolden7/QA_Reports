@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -23,13 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="907cbac3-7e97-4c9e-b602-accb56db6328">
-        <schema name="information_schema" object-types="function, table, view" />
-        <schema name="pg_catalog" object-types="function, table, view" />
-        <schema name="public" object-types="column, function, table, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="907cbac3-7e97-4c9e-b602-accb56db6328">
@@ -41,6 +35,7 @@
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$PROJECT_DIR$/db/decrementCount.sql" connection-id="" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/db/createTable.sql" connection-id="virtual-postgres-connection" current-schema="ROOT" />
     <mapping file-url="file://$PROJECT_DIR$/db/getTotalCount.sql" connection-id="" current-schema="" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">

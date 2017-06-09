@@ -1,2 +1,2 @@
 SELECT count(*) FROM bugs
-WHERE day = $1 AND month = $2 AND year = $3 AND active = 'true';
+WHERE day = $1 AND month = $2 AND year = $3;

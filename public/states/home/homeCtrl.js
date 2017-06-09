@@ -11,7 +11,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	let getTodayCount = (day, month, year) => {
 		homeService.getTodayCount(day, month, year).then(function(res, err){
-			// console.log(res.data);
+			console.log(res.data[0].count);
 			$scope.todayCount = res.data[0].count;
 		});
 	};

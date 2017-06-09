@@ -8,11 +8,16 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
-const massiveInstance = massive.connectSync({connectionString: `postgres://${config.postgresUser}:${config.postgresPass}@localhost/qa_reports`});
+const massiveInstance = massive.connectSync({connectionString: `postgresql://${config.postgresUser}:${config.postgresPass}@localhost:5432/qa_reports`});
 
 app.set('db', massiveInstance);
 const db = app.get('db');
 
+db.createTable([],(err, result) => {
+	if(err){
+		console.log(err);
+	}
+});
 
 app.get('/getTodayCount', function(req, res) {
 	db.getTodayCount([req.query.day, req.query.month, req.query.year], function(err, data) {
