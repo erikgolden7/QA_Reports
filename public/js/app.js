@@ -1,11 +1,11 @@
 angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
 	
-	$urlRouterProvider.otherwise('/login');
+	$urlRouterProvider.otherwise('/');
 	
 	$stateProvider
 	.state('home', {
-		url: '/home',
-		templateUrl: './index.html',
+		url: '/',
+		templateUrl: '../states/home/home.html',
 		controller: 'homeCtrl'
 	})
 	.state('day', {
