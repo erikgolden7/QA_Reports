@@ -1,12 +1,14 @@
-// angular.module('qaApp').service('homeService', function($http, $q) {
-//
-//
-// 	// this.getDayData = function() {
-// 	// 	return $http ({
-// 	// 		method: 'GET',
-// 	// 		url: '/getDayData'
-// 	// 	})
-// 	// };
-// 	//
-//
-// });
+angular.module('qaApp').service('dayService', function($http) {
+
+this.getDayData = ((day) => {
+	return $http ({
+		method: 'GET',
+		url: '/getDayData',
+		params: {
+			'day': day
+		}
+	})
+})
+
+
+});

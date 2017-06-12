@@ -10,17 +10,15 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	
 	let getTodayCount = (day, month, year) => {
-		homeService.getTodayCount(day, month, year).then(function(res, err){
-			console.log(res.data[0].count);
+		homeService.getTodayCount(day, month, year).then((res, err) => {
 			$scope.todayCount = res.data[0].count;
 		});
 	};
 	getTodayCount(day, month, year);
 	
 	let getTotalCount = () => {
-		homeService.getTotalCount().then(function(res, err){
+		homeService.getTotalCount().then((res, err) => {
 			$rootScope.totalCount = res.data[0].count;
-			console.log(res.data[0].count);
 		});
 	};
 	getTotalCount(day, month, year, hour);

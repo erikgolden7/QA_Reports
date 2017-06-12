@@ -1,6 +1,6 @@
 angular.module('qaApp').service('homeService', function($http, $q) {
 	
-	this.getTodayCount = function(day, month, year) {
+	this.getTodayCount = (day, month, year) => {
 		return $http ({
 			method: 'GET',
 			url: '/getTodayCount',
@@ -12,7 +12,7 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 		})
 	};
 
-	this.getTotalCount = function() {
+	this.getTotalCount = () => {
 		return $http ({
 			method: 'GET',
 			url: '/getTotalCount'

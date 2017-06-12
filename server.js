@@ -38,8 +38,14 @@ app.post('/incrementCount', function(req, res) {
 });
 
 app.delete('/decrementCount', function(req, res) {
-	db.decrementCount( (err, result) => {
-		res.send("it worked")
+	db.decrementCount((err, result) => {
+		res.send(result)
+	})
+});
+
+app.get('/getDayData', function(req, res) {
+	db.getDayData([req.query.day], (err, result) => {
+		res.send(result)
 	})
 });
 
