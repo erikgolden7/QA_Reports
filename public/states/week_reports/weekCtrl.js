@@ -15,7 +15,7 @@ function createChart(day) {
 		}
 	}).then(function successCallback(res) {
 		console.log("month success");
-		var max = 31;
+		var max = 7;
 		var arr = [];
 		for (let i = 1; i < max; i++) {
 			var count = 0;

@@ -32,7 +32,8 @@ app.get('/getTotalCount', function(req, res) {
 });
 
 app.post('/incrementCount', function(req, res) {
-	db.incrementCount([req.body.today, req.body.total, req.body.day, req.body.month, req.body.year, req.body.hour], (err, result) => {
+	let body = req.body;
+	db.incrementCount([body.today, body.total, body.day, body.weekDay, body.month, body.year, body.hour], (err, result) => {
 		res.send(result)
 	})
 });
@@ -49,12 +50,17 @@ app.get('/getDayData', function(req, res) {
 	})
 });
 
+app.get('/getWeekData', function(req, res) {
+	db.getWeekData([req.query.day], (err, result) => {
+		res.send(result);
+	})
+});
+
 app.get('/getMonthData', function(req, res) {
 	db.getMonthData([req.query.month], (err, result) => {
 		res.send(result);
 	})
 });
-
 
 app.listen(config.port, function() {
 	console.log('Listening to port:', config.port)

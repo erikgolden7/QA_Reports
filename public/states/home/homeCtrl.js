@@ -26,6 +26,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	$scope.increment = () => {
 		const date = new Date;
 		const day = date.getDate(); //day of the month (1-31)
+		const weekDay = date.getDay(); //day of the week (0-6)
 		const month = date.getMonth(); //month of the year (0-11)
 		const hour = date.getHours(); //Hour time (0-23)
 		const year = date.getFullYear(); //4 digit year
@@ -34,7 +35,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		}
 		$scope.todayCount++;
 		$scope.totalCount++;
-		homeService.increment($scope.todayCount, $scope.totalCount, day, month, year, hour);
+		homeService.increment($scope.todayCount, $scope.totalCount, day, weekDay, month, year, hour);
 	};
 	
 	$scope.decrement = () => {
