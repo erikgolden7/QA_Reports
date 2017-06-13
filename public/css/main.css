@@ -311,6 +311,10 @@ figure2:hover+span {
 	font-weight: 400;
 	}
 
+.row {
+	display: flex;
+	flex-direction: row;
+	}
 
 
 

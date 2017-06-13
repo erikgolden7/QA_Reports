@@ -20,8 +20,13 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 	})
 	.state('week', {
 		url: '/week',
-		templateUrl: '../states/week_reports/week.html',
+		templateUrl: '../states/week/week_line/week.html',
 		controller: 'weekCtrl'
+	})
+	.state('week_bar', {
+		url: '/week_bar',
+		templateUrl: '../states/week/week_bar/week_bar.html',
+		controller: 'weekBarCtrl'
 	})
 	.state('month', {
 		url: '/month',
@@ -35,12 +40,12 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 	})
 	.state('all', {
 		url: '/all',
-		templateUrl: '../states/all_reports/all.html',
+		templateUrl: '../states/all/all_line/all.html',
 		controller: 'allCtrl'
 	})
 	.state('all_bar', {
 		url: '/all_bar',
-		templateUrl: '../states/all_bar/all_bar.html',
+		templateUrl: '../states/all/all_bar/all_bar.html',
 		controller: 'allBarCtrl'
 	})
 	
