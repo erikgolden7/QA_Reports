@@ -1,7 +1,7 @@
-angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
+angular.module('qaApp').controller('monthBarCtrl', function($scope, $http) {
 	
 	$scope.title = "Reports: This Month";
-
+	
 	const days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30","31"];
 	const date = new Date;
 	const month = date.getMonth();
@@ -28,7 +28,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 			}
 			var ctx = document.getElementById("monthChart");
 			var monthChart = new Chart(ctx, {
-				type: 'line',
+				type: 'bar',
 				responsive: true,
 				maintainAspectRatio: true,
 				data: {
@@ -36,7 +36,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
-						backgroundColor: 'rgba(72,126,173,.4)',
+						backgroundColor: 'rgba(171, 214, 174,0.6)',
 						borderColor: 'rgba(108,108,108,1)',
 						borderWidth: 1
 					}]

@@ -23,10 +23,16 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 		templateUrl: '../states/month_reports/month.html',
 		controller: 'monthCtrl'
 	})
+	.state('month_bar', {
+		url: '/month_bar',
+		templateUrl: '../states/month_bar/month_bar.html',
+		controller: 'monthBarCtrl'
+	})
 	.state('all', {
 		url: '/all',
 		templateUrl: '../states/all_reports/all.html',
 		controller: 'allCtrl'
 	})
+	
 	
 });
