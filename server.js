@@ -45,7 +45,7 @@ app.delete('/decrementCount', function(req, res) {
 
 app.get('/getDayData', function(req, res) {
 	db.getDayData([req.query.day], (err, result) => {
-		res.send(result)
+		res.send(result);
 	})
 });
 
