@@ -10,12 +10,12 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 	})
 	.state('day', {
 		url: '/day',
-		templateUrl: '../states/day_reports/day.html',
+		templateUrl: '../states/day/day_line/day.html',
 		controller: 'dayCtrl'
 	})
 	.state('day_bar', {
 		url: '/day_bar',
-		templateUrl: '../states/day_bar/day_bar.html',
+		templateUrl: '../states/day/day_bar/day_bar.html',
 		controller: 'dayBarCtrl'
 	})
 	.state('week', {
@@ -38,6 +38,10 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 		templateUrl: '../states/all_reports/all.html',
 		controller: 'allCtrl'
 	})
-	
+	.state('all_bar', {
+		url: '/all_bar',
+		templateUrl: '../states/all_bar/all_bar.html',
+		controller: 'allBarCtrl'
+	})
 	
 });
