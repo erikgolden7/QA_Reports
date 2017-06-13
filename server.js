@@ -49,6 +49,11 @@ app.get('/getDayData', function(req, res) {
 	})
 });
 
+app.get('/getMonthData', function(req, res) {
+	db.getMonthData([req.query.month], (err, result) => {
+		res.send(result);
+	})
+});
 
 
 app.listen(config.port, function() {

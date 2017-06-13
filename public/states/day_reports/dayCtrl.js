@@ -13,7 +13,7 @@ angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
 				'day': day
 			}
 		}).then(function successCallback(res) {
-			console.log("success");
+			console.log("day success");
 			var max = 24;
 			var arr = [];
 			for (let i = 0; i < max; i++) {
