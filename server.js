@@ -62,6 +62,12 @@ app.get('/getMonthData', function(req, res) {
 	})
 });
 
+app.get('/getAllData', function(req, res) {
+	db.getAllData([req.query.month], (err, result) => {
+		res.send(result);
+	})
+});
+
 app.listen(config.port, function() {
 	console.log('Listening to port:', config.port)
 });

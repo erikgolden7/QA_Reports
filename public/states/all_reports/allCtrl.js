@@ -1,39 +1,60 @@
-angular.module('qaApp').controller('allCtrl', function($scope) {
+angular.module('qaApp').controller('allCtrl', function($scope, $http) {
 	
-	$scope.test = "Reports: All Time";
+	$scope.title = "Reports: All Time";
 	
-	// $scope.htmlEndTime = () => {
-	// 	let date = new Date();
-	// 	assessmentService.htmlEndTime($scope.user.id, date);
-	// 	$scope.stop1 = false;
-	// };
+	const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	const date = new Date;
+	const month = date.getMonth();
 	
-	var ctx = document.getElementById("allChart");
-	var allChart = new Chart(ctx, {
-		type: 'line',
-		responsive: true,
-		maintainAspectRatio: true,
-		data: {
-			labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-			datasets: [{
-				label: 'Bugs Found',
-				data: [12, 19, 3, 78, 2, 73, 123, 53, 7, 35, 66, 4],
-				backgroundColor: 'rgba(72,126,173,.3)',
-				borderColor: 'rgba(108,108,108,1)',
-				borderWidth: 1
-			}]
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero:true
-					}
-				}]
+	function createChart(month) {
+		$http ({
+			method: 'GET',
+			url: '/getAllData',
+			params: {
+				'month': month
 			}
-		}
-	});
-	
+		}).then(function successCallback(res) {
+			console.log("all success");
+			var max = 13;
+			var arr = [];
+			for (let i = 1; i < max; i++) {
+				var count = 0;
+				for (key in res.data) {
+					if (res.data[key].month === i) {
+						count++;
+					}
+				}
+				arr.push(count);
+			}
+			var ctx = document.getElementById("allChart");
+			var allChart = new Chart(ctx, {
+				type: 'line',
+				responsive: true,
+				maintainAspectRatio: true,
+				data: {
+					labels: months,
+					datasets: [{
+						label: 'Bugs Found',
+						data: arr,
+						backgroundColor: 'rgba(72,126,173,.3)',
+						borderColor: 'rgba(108,108,108,1)',
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					}
+				}
+			})
+		}, function errorCallback(res) {
+			console.log('failed to get day data')
+		});
+	}
+	createChart(month);
 });
-
 

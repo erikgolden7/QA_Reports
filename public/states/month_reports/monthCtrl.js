@@ -15,7 +15,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 			}
 		}).then(function successCallback(res) {
 			console.log("month success");
-			var max = 31;
+			var max = 32;
 			var arr = [];
 			for (let i = 1; i < max; i++) {
 				var count = 0;
