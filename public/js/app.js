@@ -38,15 +38,15 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 		templateUrl: '../states/month/month_bar/month_bar.html',
 		controller: 'monthBarCtrl'
 	})
-	.state('all', {
-		url: '/all',
-		templateUrl: '../states/all/all_line/all.html',
-		controller: 'allCtrl'
+	.state('year', {
+		url: '/year',
+		templateUrl: '../states/year/year_line/year.html',
+		controller: 'yearCtrl'
 	})
-	.state('all_bar', {
-		url: '/all_bar',
-		templateUrl: '../states/all/all_bar/all_bar.html',
-		controller: 'allBarCtrl'
+	.state('year_bar', {
+		url: '/year_bar',
+		templateUrl: '../states/year/year_bar/year_bar.html',
+		controller: 'yearBarCtrl'
 	})
 	
 });

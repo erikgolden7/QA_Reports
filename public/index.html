@@ -26,13 +26,13 @@
 			<div class="modal-content">
 				<span class="close">&times;</span><br/>
 				<h1 class="popup_header">Information</h1>
-				<p class="popup_center">QA Bug Reports is intended to help QA monitor the number of bugs discovered. The count can be incremented and decremented using the jolt arrows in the center of the page. Line graph reports for daily, weekly, monthly, and all time bug statistics are available at the bottom of the page. </p><br>
+				<p class="popup_center">QA Bug Reports is intended to help QA monitor the number of bugs discovered. The count can be incremented and decremented using the jolt arrows in the center of the page. Line graph reports for daily, weekly, monthly, and yearly bug statistics are available at the bottom of the page. </p><br>
 				<p><span class="popup_bold">Total Catastrophes Averted:</span> All time cumulative count of bugs discovered.</p><br>
 				<p><span class="popup_bold">Bugs Squished Today:</span> Bug count for the current day.</p><br>
 				<p><span class="popup_bold">Daily Reports:</span> Daily reports are represented by 24 hours in a day.</p><br>
 				<p><span class="popup_bold">Weekly Reports:</span> Weekly reports are represented by days of the week.</p><br>
 				<p><span class="popup_bold">Monthly Reports:</span> Monthly reports are represented by 31 days in a month</p><br>
-				<p><span class="popup_bold">All Time Reports:</span> All time reports is represented by 12 months in a year.</p><br>
+				<p><span class="popup_bold">Yearly Reports:</span> Yearly reports is represented by 12 months in a year.</p><br>
 			</div>
 		</div>
 		
@@ -59,7 +59,7 @@
 			<div ui-sref="day" class="menu_item" ng-click="day()">Day</div>
 			<div ui-sref="week" class="menu_item">Week</div>
 			<div ui-sref="month" class="menu_item">Month</div>
-			<div ui-sref="all" class="menu_item">All</div>
+			<div ui-sref="year" class="menu_item">Year</div>
 		</div>
 		
 		<div class="outer_box">
@@ -73,11 +73,11 @@
 		<script src="./states/day/day_line/dayCtrl.js"></script>
 		<script src="states/week/week_line/weekCtrl.js"></script>
 		<script src="./states/month/month_line/monthCtrl.js"></script>
-		<script src="states/all/all_line/allCtrl.js"></script>
+		<script src="states/year/year_line/yearCtrl.js"></script>
 		<script src="./states/month/month_bar/monthBarCtrl.js"></script>
 		<script src="./states/day/day_bar/dayBarCtrl.js"></script>
 		<script src="states/week/week_bar/weekBarCtrl.js"></script>
-		<script src="states/all/all_bar/allBarCtrl.js"></script>
+		<script src="states/year/year_bar/yearBarCtrl.js"></script>
 		<script src="./states/home/homeService.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
 	</body>

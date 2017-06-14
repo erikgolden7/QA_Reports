@@ -1,6 +1,6 @@
-angular.module('qaApp').controller('allCtrl', function($scope, $http) {
+angular.module('qaApp').controller('yearBarCtrl', function($scope, $http) {
 	
-	$scope.title = "Reports: All Time";
+	$scope.title = "Reports: Year Time";
 	
 	const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const date = new Date;
@@ -9,12 +9,12 @@ angular.module('qaApp').controller('allCtrl', function($scope, $http) {
 	function createChart(month) {
 		$http ({
 			method: 'GET',
-			url: '/getAllData',
+			url: '/getyearData',
 			params: {
 				'month': month
 			}
 		}).then(function successCallback(res) {
-			console.log("all success");
+			console.log("year success");
 			var max = 13;
 			var arr = [];
 			for (let i = 1; i < max; i++) {
@@ -26,9 +26,9 @@ angular.module('qaApp').controller('allCtrl', function($scope, $http) {
 				}
 				arr.push(count);
 			}
-			var ctx = document.getElementById("allChart");
-			var allChart = new Chart(ctx, {
-				type: 'line',
+			var ctx = document.getElementById("yearChart");
+			var yearChart = new Chart(ctx, {
+				type: 'bar',
 				responsive: true,
 				maintainAspectRatio: true,
 				data: {
@@ -36,7 +36,7 @@ angular.module('qaApp').controller('allCtrl', function($scope, $http) {
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
-						backgroundColor: 'rgba(72,126,173,.3)',
+						backgroundColor: 'rgba(171, 214, 174,0.6)',
 						borderColor: 'rgba(108,108,108,1)',
 						borderWidth: 1
 					}]
@@ -57,4 +57,5 @@ angular.module('qaApp').controller('allCtrl', function($scope, $http) {
 	}
 	createChart(month);
 });
+
 

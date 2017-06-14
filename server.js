@@ -62,8 +62,8 @@ app.get('/getMonthData', function(req, res) {
 	})
 });
 
-app.get('/getAllData', function(req, res) {
-	db.getAllData([req.query.month], (err, result) => {
+app.get('/getYearData', function(req, res) {
+	db.getYearData([req.query.month], (err, result) => {
 		res.send(result);
 	})
 });
