@@ -1,4 +1,4 @@
-angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, homeService) {
+angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, homeService, $window) {
 	
 	const max = 99999;
 	const min = 0;
@@ -35,7 +35,13 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		}
 		$scope.todayCount++;
 		$scope.totalCount++;
-		homeService.increment($scope.todayCount, $scope.totalCount, day, weekDay, month, year, hour);
+		// homeService.getWeekData().then((res, err) => {
+			
+			homeService.increment($scope.todayCount, $scope.totalCount, day, weekDay, month, year, hour);
+			
+		// });
+		// }
+		
 	};
 	
 	$scope.decrement = () => {

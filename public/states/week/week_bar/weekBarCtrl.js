@@ -99,22 +99,22 @@ angular.module('qaApp').controller('weekBarCtrl', function($scope, $http) {
 	
 	
 	
-	function weekCount(year, month) {
-		var firstOfMonth = new Date(year, month - 1, 1);
-		console.log(firstOfMonth);
-		var lastOfMonth = new Date(year, month, 0);
-		console.log(lastOfMonth);
-		
-		var used = firstOfMonth.getDay() + lastOfMonth.getDate();
-		
-		var answer =  Math.ceil(used/7);
-		console.log(answer);
-	}
-	weekCount(2017, 1)
-	weekCount(2017, 2)
-	weekCount(2017, 3)
-	weekCount(2017, 4)
-	weekCount(2017, 5)
-	weekCount(2017, 6)
-	weekCount(2017, 7)
+	// function weekCount(year, month) {
+	// 	var firstOfMonth = new Date(year, month - 1, 1);
+	// 	console.log(firstOfMonth);
+	// 	var lastOfMonth = new Date(year, month, 0);
+	// 	console.log(lastOfMonth);
+	//
+	// 	var used = firstOfMonth.getDay() + lastOfMonth.getDate();
+	//
+	// 	var answer =  Math.ceil(used/7);
+	// 	console.log(answer);
+	// }
+	// weekCount(2017, 1)
+	// weekCount(2017, 2)
+	// weekCount(2017, 3)
+	// weekCount(2017, 4)
+	// weekCount(2017, 5)
+	// weekCount(2017, 6)
+	// weekCount(2017, 7)
 });
