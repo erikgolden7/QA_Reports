@@ -16,7 +16,7 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http) {
 		}).then(function successCallback(res) {
 			console.log("month success");
 			var arr = [];
-			for (let i = 1; i < 31; i++) {
+			for (let i = 1; i <= 31; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].day === i) {
@@ -51,7 +51,7 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http) {
 				}
 			})
 		}, function errorCallback(res) {
-			console.log('failed to get day data')
+			console.log('month fail')
 		});
 	}
 	createChart(month);

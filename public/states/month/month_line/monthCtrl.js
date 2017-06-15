@@ -1,8 +1,7 @@
 angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 	
 	$scope.title = "Reports: This Month";
-
-	const days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30","31"];
+	
 	const date = new Date;
 	const month = date.getMonth();
 	
@@ -16,7 +15,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 		}).then(function successCallback(res) {
 			console.log("month success");
 			var arr = [];
-			for (let i = 1; i < 31; i++) {
+			for (let i = 1; i <= 31; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].day === i) {
@@ -31,7 +30,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 				responsive: true,
 				maintainAspectRatio: true,
 				data: {
-					labels: days,
+					labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30","31"],
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
@@ -51,7 +50,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 				}
 			})
 		}, function errorCallback(res) {
-			console.log('failed to get day data')
+			console.log('month fail')
 		});
 	}
 	createChart(month);

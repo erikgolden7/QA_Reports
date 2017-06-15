@@ -15,7 +15,7 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
 		}).then(function successCallback(res) {
 			console.log("day success");
 			var arr = [];
-			for (let i = 1; i < 24; i++) {
+			for (let i = 1; i <= 24; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].hour === i) {
@@ -50,7 +50,7 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
 				}
 			})
 		}, function errorCallback(res) {
-			console.log('failed to get day data')
+			console.log('day failed')
 		});
 	}
 	createChart(day);

@@ -2,10 +2,9 @@ angular.module('qaApp').controller('weekCtrl', function($scope, $http) {
 
 $scope.title = "Reports: This Week";
 
-
 const date = new Date;
 const day = date.getDate();
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
 
 	// Get the current day of the week in text format
 	(function() {
@@ -16,7 +15,7 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 	})();
 	const now = new Date();
 	const currentDay = now.getDayName();
-	console.log(currentDay);
+
 	
 	// Get the week number in the year out of 52
 	function getWeekNumber(d) {
@@ -27,11 +26,10 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 		return weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
 	}
 	const weekNum = getWeekNumber(new Date());
-	console.log(weekNum);
+
 
 	// Create the chart
 	function createChart(week) {
-		console.log(days, currentDay);
 		$http ({
 			method: 'GET',
 			url: '/getWeekData',
@@ -39,7 +37,6 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 				'week': week
 			}
 		}).then(function successCallback(res) {
-			console.log(res);
 			console.log("week success");
 			const arr = [];
 			for (let i = 1; i < 7; i++) {
@@ -51,7 +48,6 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 				var saturdayCount = 0;
 				var sundayCount = 0;
 				for (key in res.data) {
-					// console.log(res.data[key].currentday);
 					if (res.data[key].currentday === "Monday") {
 						mondayCount++;
 					}
@@ -81,8 +77,6 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 				arr.splice(4, 1, fridayCount);
 				arr.splice(5, 1, saturdayCount);
 				arr.splice(6, 1, sundayCount);
-
-				console.log(arr);
 			}
 			
 			const ctx = document.getElementById("weekChart");
@@ -111,7 +105,7 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 				}
 			})
 		}, function errorCallback(res) {
-			console.log('failed to get day data')
+			console.log('week fail')
 		});
 	}
 	createChart(weekNum, currentDay);

@@ -17,14 +17,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
 		return weekNo;
 	}
-
-	//
-	// function getCurrentDay() {
-	// 	var dayOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-	// 	Date.prototype.getDayName = function() {
-	// 		return dayOfWeek[ this.getDay() ];
-	// 	};
-	// }
 	
 	
 	let getTodayCount = (day, month, year) => {
@@ -63,18 +55,12 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		})();
 		const now = new Date();
 		const currentDay = now.getDayName();
-		console.log(currentDay);
 
 		
 		$scope.todayCount++;
 		$scope.totalCount++;
-		// homeService.getWeekData().then((res, err) => {
 			
-			homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour);
-			
-		// });
-		// }
-		
+		homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour);
 	};
 	
 	$scope.decrement = () => {

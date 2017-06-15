@@ -51,7 +51,7 @@ angular.module('qaApp').controller('yearBarCtrl', function($scope, $http) {
 				}
 			})
 		}, function errorCallback(res) {
-			console.log('failed to get day data')
+			console.log('year fail')
 		});
 	}
 	createChart(month);
