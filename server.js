@@ -33,7 +33,7 @@ app.get('/getTotalCount', function(req, res) {
 
 app.post('/incrementCount', function(req, res) {
 	let body = req.body;
-	db.incrementCount([body.today, body.total, body.day, body.weekDay, body.month, body.year, body.hour], (err, result) => {
+	db.incrementCount([body.today, body.total, body.day, body.currentDay, body.week, body.weekDay, body.month, body.year, body.hour], (err, result) => {
 		res.send(result)
 	})
 });
@@ -51,7 +51,7 @@ app.get('/getDayData', function(req, res) {
 });
 
 app.get('/getWeekData', function(req, res) {
-	db.getWeekData([req.query.day], (err, result) => {
+	db.getWeekData([req.query.week], (err, result) => {
 		res.send(result);
 	})
 });

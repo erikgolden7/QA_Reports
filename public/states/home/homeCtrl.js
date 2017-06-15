@@ -9,6 +9,24 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	const year = date.getFullYear(); //4 digit year
 	
 	
+	function getWeekNumber(d) {
+		d = new Date(+d);
+		d.setHours(0,0,0,0);
+		d.setDate(d.getDate() + 4 - (d.getDay()||7));
+		var yearStart = new Date(d.getFullYear(),0,1);
+		var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+		return weekNo;
+	}
+
+	//
+	// function getCurrentDay() {
+	// 	var dayOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	// 	Date.prototype.getDayName = function() {
+	// 		return dayOfWeek[ this.getDay() ];
+	// 	};
+	// }
+	
+	
 	let getTodayCount = (day, month, year) => {
 		homeService.getTodayCount(day, month, year).then((res, err) => {
 			$scope.todayCount = res.data[0].count;
@@ -30,14 +48,29 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		const month = date.getMonth(); //month of the year (0-11)
 		const hour = date.getHours(); //Hour time (0-23)
 		const year = date.getFullYear(); //4 digit year
+		const week = getWeekNumber(new Date());
+		
 		if ($scope.todayCount >= max) {
 			return;
 		}
+		
+		// Get the current day of the week in text format
+		(function() {
+			var days1 = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			Date.prototype.getDayName = function() {
+				return days1[ this.getDay() ];
+			};
+		})();
+		const now = new Date();
+		const currentDay = now.getDayName();
+		console.log(currentDay);
+
+		
 		$scope.todayCount++;
 		$scope.totalCount++;
 		// homeService.getWeekData().then((res, err) => {
 			
-			homeService.increment($scope.todayCount, $scope.totalCount, day, weekDay, month, year, hour);
+			homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour);
 			
 		// });
 		// }

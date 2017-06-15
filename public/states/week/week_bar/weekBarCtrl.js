@@ -59,6 +59,10 @@ angular.module('qaApp').controller('weekBarCtrl', function($scope, $http) {
 	createChart(day);
 	
 	
+	
+
+	
+	
 	// function getISOWeekInMonth(date) {
 	// 	var d = new Date(+date);
 	// 	if (isNaN(d)) return;

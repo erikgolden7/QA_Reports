@@ -1,3 +1,3 @@
 SELECT * FROM bugs
-WHERE weekDay = $1
+WHERE week = $1
 ORDER BY day ASC;

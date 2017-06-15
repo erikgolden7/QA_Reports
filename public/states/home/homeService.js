@@ -19,7 +19,7 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 		})
 	};
 	
-	this.increment = (today, total, day, weekDay, month, year, hour) => {
+	this.increment = (today, total, day, currentDay, week, weekDay, month, year, hour) => {
 		return $http({
 			method: 'POST',
 			url: '/incrementCount',
@@ -27,6 +27,8 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 				'today' : today,
 				'total' : total,
 				'day' : day,
+				'currentDay' : currentDay,
+				'week' : week,
 				'weekDay' : weekDay,
 				'month' : month,
 				'year' : year,
