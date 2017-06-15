@@ -42,7 +42,7 @@ const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 			console.log(res);
 			console.log("week success");
 			const arr = [];
-			for (let i = 0; i < 7; i++) {
+			for (let i = 1; i < 7; i++) {
 				var mondayCount = 0;
 				var tuesdayCount = 0;
 				var wednesdayCount = 0;

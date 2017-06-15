@@ -15,9 +15,8 @@ angular.module('qaApp').controller('yearBarCtrl', function($scope, $http) {
 			}
 		}).then(function successCallback(res) {
 			console.log("year success");
-			var max = 13;
 			var arr = [];
-			for (let i = 1; i < max; i++) {
+			for (let i = 0; i < 12; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].month === i) {

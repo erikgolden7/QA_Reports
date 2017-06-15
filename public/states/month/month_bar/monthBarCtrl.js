@@ -15,9 +15,8 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http) {
 			}
 		}).then(function successCallback(res) {
 			console.log("month success");
-			var max = 32;
 			var arr = [];
-			for (let i = 1; i < max; i++) {
+			for (let i = 1; i < 31; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].day === i) {

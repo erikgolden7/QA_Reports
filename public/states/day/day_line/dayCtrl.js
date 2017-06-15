@@ -14,9 +14,8 @@ angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
 			}
 		}).then(function successCallback(res) {
 			console.log("day success");
-			var max = 24;
 			var arr = [];
-			for (let i = 0; i < max; i++) {
+			for (let i = 1; i < 24; i++) {
 				var count = 0;
 				for (key in res.data) {
 					if (res.data[key].hour === i) {
