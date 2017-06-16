@@ -55,7 +55,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		})();
 		const now = new Date();
 		const currentDay = now.getDayName();
-
 		
 		$scope.todayCount++;
 		$scope.totalCount++;
