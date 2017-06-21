@@ -13,5 +13,6 @@
     <orderEntry type="library" name="angular-route" level="application" />
     <orderEntry type="library" name="Chart.bundle" level="application" />
     <orderEntry type="library" name="Chart.bundle" level="application" />
+    <orderEntry type="library" name="angular-datepicker" level="application" />
   </component>
 </module>

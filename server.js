@@ -50,6 +50,18 @@ app.get('/getDayData', function(req, res) {
 	})
 });
 
+app.get('/getInputDayData', function(req, res) {
+	db.getInputDayData([req.query.inputDay, req.query.inputMonth, req.query.inputYear], (err, result) => {
+		res.send(result);
+	})
+});
+
+app.get('/getPreviousDayData', function(req, res) {
+	db.getPreviousDayData([req.query.day], (err, result) => {
+		res.send(result);
+	})
+});
+
 app.get('/getWeekData', function(req, res) {
 	db.getWeekData([req.query.week], (err, result) => {
 		res.send(result);

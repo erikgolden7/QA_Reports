@@ -316,5 +316,11 @@ figure2:hover+span {
 	flex-direction: row;
 	}
 
-
+.search_settings {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5px;
+	}
 

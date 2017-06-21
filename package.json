@@ -20,6 +20,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
+    "angularjs-datepicker": "^2.1.21",
     "body-parser": "^1.17.2",
     "chart.js": "^2.6.0",
     "cookie-parser": "^1.4.3",
