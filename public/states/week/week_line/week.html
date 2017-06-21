@@ -1,9 +1,12 @@
 <div class="report_box">
 	<div class="report_title">{{title}}</div>
-	<div class="row">
-		<button> < </button>
+	<form class="search_settings">
+		<button ui-sref="week" ng-click="reloadPage()">Current Week</button>
 		<button ui-sref="week_bar">Bar Graph</button>
-		<button> > </button>
-	</div>
+	</form>
+	<form class="search_settings">
+		<input type="week" name="year_week" ng-model="inputDate">
+		<input type="button" value="search" ng-click="getWeek()">
+	</form>
 	<div><canvas id="weekChart" width="1000" height="450"></canvas></div>
 </div>

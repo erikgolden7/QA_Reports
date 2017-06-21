@@ -9,6 +9,10 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	const year = date.getFullYear(); //4 digit year
 	
 	
+	$scope.reloadPage = () => {
+		window.location.reload();
+	};
+	
 	function getWeekNumber(d) {
 		d = new Date(+d);
 		d.setHours(0,0,0,0);

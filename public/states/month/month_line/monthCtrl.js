@@ -2,6 +2,10 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
 	
 	$scope.title = "Reports: This Month";
 	
+	$scope.reloadPage = () => {
+		window.location.reload();
+	};
+	
 	const date = new Date;
 	const month = date.getMonth();
 	

@@ -57,10 +57,10 @@
 		</div>
 		
 		<div class="menu">
-			<div ui-sref="day" class="menu_item" ng-click="day()">Day</div>
-			<div ui-sref="week" class="menu_item">Week</div>
-			<div ui-sref="month" class="menu_item">Month</div>
-			<div ui-sref="year" class="menu_item">Year</div>
+			<div ui-sref="day" class="menu_item" ng-click="reloadPage()">Day</div>
+			<div ui-sref="week" class="menu_item" ng-click="reloadPage()">Week</div>
+			<div ui-sref="month" class="menu_item" ng-click="reloadPage()">Month</div>
+			<div ui-sref="year" class="menu_item" ng-click="reloadPage()">Year</div>
 		</div>
 		
 		<div class="outer_box">
@@ -80,7 +80,6 @@
 		<script src="states/week/week_bar/weekBarCtrl.js"></script>
 		<script src="states/year/year_bar/yearBarCtrl.js"></script>
 		<script src="./states/home/homeService.js"></script>
-		<script src="states/day/today/todayCtrl.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.21/angular-datepicker.js"></script>
 	</body>

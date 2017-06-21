@@ -1,5 +1,8 @@
 angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
 	
+	$scope.reloadPage = () => {
+		window.location.reload();
+	};
 	
 	$scope.sayDate = function() {
 		console.log($scope.inputDate);

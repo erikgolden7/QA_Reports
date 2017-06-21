@@ -1,8 +1,8 @@
 <div class="report_box">
 	<div class="report_title">{{title}}</div>
 	<form class="search_settings">
-		<button ui-sref="today">Today</button>
-		<button ui-sref="day">Line Graph</button>
+		<button ui-sref="today" ng-click="reloadPage()">Today</button>
+		<button ui-sref="day" ng-click="sayDate()">Line Graph</button>
 	</form>
 	<form class="search_settings">
 		<input type="date" name="graph" max="2025-12-31" min="2017-01-01" ng-model="inputDate">
