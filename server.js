@@ -56,8 +56,8 @@ app.get('/getInputDayData', function(req, res) {
 	})
 });
 
-app.get('/getPreviousDayData', function(req, res) {
-	db.getPreviousDayData([req.query.day], (err, result) => {
+app.get('/getTodayData', function(req, res) {
+	db.getDayData([req.query.day], (err, result) => {
 		res.send(result);
 	})
 });

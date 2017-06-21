@@ -1,14 +1,10 @@
 <div class="report_box">
 	<div class="report_title">{{title}}</div>
-	
-	<!--<form name="myForm" ng-submit="ctrl.register()">-->
-		<!--Name: <input type="text" ng-model="ctrl.user.name">-->
-		<!--Email: <input type="email" ng-model="ctrl.user.email">-->
-		<!--<input type="submit" value="Register">-->
-	<!--</form>-->
-	
 	<form class="search_settings">
+		<button ui-sref="today">Today</button>
 		<button ui-sref="day_bar">Bar Graph</button>
+	</form>
+	<form class="search_settings">
 		<input type="date" name="graph" max="2025-12-31" min="2017-01-01" ng-model="inputDate">
 		<input type="button" value="search" ng-click="sayDate()">
 	</form>

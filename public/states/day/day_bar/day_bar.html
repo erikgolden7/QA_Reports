@@ -1,9 +1,12 @@
 <div class="report_box">
 	<div class="report_title">{{title}}</div>
 	<form class="search_settings">
+		<button ui-sref="today">Today</button>
 		<button ui-sref="day">Line Graph</button>
-		<input type="date" name="graph" max="2025-12-31" min="2017-01-01">
-		<input type="button" value="search">
+	</form>
+	<form class="search_settings">
+		<input type="date" name="graph" max="2025-12-31" min="2017-01-01" ng-model="inputDate">
+		<input type="button" value="search" ng-click="sayDate()">
 	</form>
 	<div><canvas id="dayChart" width="1000" height="450"></canvas></div>
 </div>

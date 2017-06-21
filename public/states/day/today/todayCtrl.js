@@ -1,4 +1,4 @@
-angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
+angular.module('qaApp').controller('todayCtrl', function($scope, $http) {
 	
 	
 	$scope.sayDate = function() {
@@ -6,10 +6,10 @@ angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
 		var inputDate = $scope.inputDate;
 		console.log(inputDate);
 		
-			var inputYear = inputDate.getFullYear();
-			var inputMonth = inputDate.getMonth();
-			var inputDay = inputDate.getDate();
-
+		var inputYear = inputDate.getFullYear();
+		var inputMonth = inputDate.getMonth();
+		var inputDay = inputDate.getDate();
+		
 		console.log(inputMonth, inputDay, inputYear);
 		
 		$scope.title = "Reports: Today";
@@ -127,9 +127,3 @@ angular.module('qaApp').controller('dayCtrl', function($scope, $http) {
 	}
 	createChart(day);
 });
-
-
-
-	
-
-

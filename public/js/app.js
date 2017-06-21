@@ -1,4 +1,4 @@
-angular.module('qaApp', ['ui.router', '720kb.datepicker']).config(function($stateProvider, $urlRouterProvider) {
+angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
 	
 	$urlRouterProvider.otherwise('/');
 	
@@ -18,11 +18,11 @@ angular.module('qaApp', ['ui.router', '720kb.datepicker']).config(function($stat
 		templateUrl: '../states/day/day_bar/day_bar.html',
 		controller: 'dayBarCtrl'
 	})
-	.state('day_previous', {
-		url: '/day_previous',
+	.state('today', {
+		url: '/today',
 		params: { param1: null },
-		templateUrl: '../states/day/day_previous/day_previous.html',
-		controller: 'dayPreviousCtrl'
+		templateUrl: '../states/day/today/today.html',
+		controller: 'todayCtrl'
 	})
 	.state('week', {
 		url: '/week',
