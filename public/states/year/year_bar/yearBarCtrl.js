@@ -6,6 +6,10 @@ angular.module('qaApp').controller('yearBarCtrl', function($scope, $http) {
 	const date = new Date;
 	const month = date.getMonth();
 	
+	$scope.reloadPage = () => {
+		window.location.reload();
+	};
+	
 	function createChart(month) {
 		$http ({
 			method: 'GET',
