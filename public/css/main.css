@@ -180,7 +180,7 @@ figure2:hover+span {
 	/*}*/
 
 .tally_box {
-	margin: 10px 0 10px 0;
+	margin: 25px 0 10px 0;
 	font-size: 28px;
 	width: 600px;
 	padding: 5px;
@@ -299,20 +299,18 @@ figure2:hover+span {
 /*Reports Box*/
 .outer_box {
 	display: flex;
-	/*align-items: center;*/
 	flex-direction: column;
 	width: auto;
 	height: auto;
 	border: gray solid 1px;
 	border-radius: 7px;
-	margin: 12px 10% 0 10%;
+	margin: 25px 10% 0 10%;
 	background-color: #efefef;
 	padding: 10px 10px 10px 10px;
 	}
 
 .report_title {
 	padding-bottom: 5px;
-	/*margin-top: -40px;*/
 	}
 
 .report_box {
@@ -330,7 +328,24 @@ figure2:hover+span {
 	margin: auto;
 	width: 80%;
 	height: auto;
-	/*background-color: black;*/
+	}
+
+.row_left {
+	 width: 700px;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	/*background-color: red;*/
+	justify-content: space-between;
+	
+	}
+
+.row_right {
+		width: 18%;
+	height: auto;
+	display: flex;
+	justify-content: flex-end;
+	/*background-color: green;*/
 	}
 
 .search_settings {
@@ -342,12 +357,29 @@ figure2:hover+span {
 	}
 
 .days_since_box {
-	margin: 10px 0 10px 0;
-	font-size: 28px;
-	width: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 25px 0 10px 0;
+	font-size: 32px;
+	max-width: 220px;
+	min-width: 200px;
+	width: auto;
+	height: 119px;
 	padding: 10px;
+	line-height: 1.3;
 	border: solid #818181 1px;
 	border-radius: 5px;
-	background-color: #e1ebe0;
+	background: url('http://v2media.ae/wp-content/uploads/2015/02/1920x1080.jpg') no-repeat center;
+	background-size: cover;
 	}
-	
+
+.days_since_text {
+	color: white;
+	}
+
+.days_since_text_sm {
+	color: white;
+	font-size: 14px;
+	}

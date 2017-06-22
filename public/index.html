@@ -44,29 +44,31 @@
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
 		
 		<div class="row">
-			
-			<div class="background">
-				<div ng-cloak class="tally_box">
-					<div class="tally_item_top">
-						<div> Total Catastrophes Averted:</div>
-						<div>{{totalCount}}</div>
-					</div>
-					<div class="tally_item_bottom">
-						<div>Bugs Squished Today:</div>
-						<div>{{todayCount}}</div>
+			<div class="row_left">
+				<div class="background">
+					<div ng-cloak class="tally_box">
+						<div class="tally_item_top">
+							<div> Total Catastrophes Averted:</div>
+							<div>{{totalCount}}</div>
+						</div>
+						<div class="tally_item_bottom">
+							<div>Bugs Squished Today:</div>
+							<div>{{todayCount}}</div>
+						</div>
 					</div>
 				</div>
+				
+				<div class="buttons">
+					<div class="increment" ng-click="increment()"></div>
+					<div class="decrement" ng-click="decrement()"></div>
+				</div>
 			</div>
-			
-			<div class="buttons">
-				<div class="increment" ng-click="increment()"></div>
-				<div class="decrement" ng-click="decrement()"></div>
+			<div class="row_right">
+				<div class="days_since_box">
+					<span class="days_since_text_sm">Days without Accident:</span>
+					<span class="days_since_text">{{daysSince}}</span>
+				</div>
 			</div>
-			
-			<div class="days_since_box">
-				{{daysSince}}
-			</div>
-
 		</div>
 		
 		
