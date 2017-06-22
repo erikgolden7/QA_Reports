@@ -258,7 +258,7 @@ figure2:hover+span {
 .menu_right {
 	display: flex;
 	position: absolute;
-	right: 11%;
+	right: 1%;
 	justify-content: center;
 	height: auto;
 	padding: 6px 6px 7px 6px;
@@ -299,6 +299,7 @@ figure2:hover+span {
 /*Reports Box*/
 .outer_box {
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	width: auto;
 	height: auto;
