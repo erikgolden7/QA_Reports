@@ -1,6 +1,6 @@
 angular.module('qaApp').controller('yearBarCtrl', function($scope, $http, $state) {
 	
-	$scope.title = "Reports: Year Time";
+	$scope.title = "Reports: This Year";
 	
 	const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const date = new Date;
