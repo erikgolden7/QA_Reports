@@ -28,11 +28,11 @@
 
 @media only screen  and (min-width : 2000px) {
 	.report_summary_left {
-		height: 700px;
+		height: 600px;
 		}
 	
 	.report_box {
-		min-height: 700px;
+		min-height: 600px;
 		}
 	}
 
