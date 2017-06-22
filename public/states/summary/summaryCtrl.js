@@ -2,10 +2,6 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 
 	$scope.title = "Summary Reports";
 	
-	$scope.reloadPage = () => {
-		$state.reload();
-	};
-	
 	
 	function createChart() {
 		$http({
