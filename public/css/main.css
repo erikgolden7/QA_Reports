@@ -301,8 +301,8 @@ figure2:hover+span {
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	width: auto;
-	height: auto;
+	/*width: auto;*/
+	/*height: auto;*/
 	border: gray solid 1px;
 	border-radius: 7px;
 	margin: 25px 10% 0 10%;
