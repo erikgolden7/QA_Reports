@@ -1,4 +1,4 @@
-angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, homeService, $window) {
+angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, homeService, $state) {
 	
 	const max = 99999;
 	const min = 0;
@@ -8,10 +8,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	const hour = date.getHours(); //Hour time (0-23)
 	const year = date.getFullYear(); //4 digit year
 	
-	
-	$scope.reloadPage = () => {
-		window.location.reload();
-	};
 	
 	function getWeekNumber(d) {
 		d = new Date(+d);
@@ -63,7 +59,10 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		$scope.todayCount++;
 		$scope.totalCount++;
 			
-		homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour);
+		homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour).then(function() {
+			$state.reload();
+		})
+
 	};
 	
 	$scope.decrement = () => {
@@ -72,7 +71,9 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		}
 		$scope.todayCount--;
 		$scope.totalCount--;
-		homeService.decrement();
+		homeService.decrement().then(function() {
+			$state.reload();
+		});
 	};
 	
 	//Popup Information Modal
@@ -92,6 +93,19 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		if (event.target === popup) {
 			modal.style.display = "none";
 		}
-	}
+	};
+	
+	
+	
+	
+	
+	
+	
+	var initialDate = new Date(2012, 11, 1); // Attention: month is zero-based
+	var now = Date.now();
+	var difference = now - initialDate;
+	var millisecondsPerDay = 24 * 60 * 60 * 1000;
+	$scope.daysSince = Math.floor(difference / millisecondsPerDay);
+	
 	
 });

@@ -1,9 +1,9 @@
-angular.module('qaApp').controller('monthCtrl', function($scope, $http) {
+angular.module('qaApp').controller('monthCtrl', function($scope, $http, $state) {
 	
 	$scope.title = "Reports: This Month";
 	
 	$scope.reloadPage = () => {
-		window.location.reload();
+		$state.reload();
 	};
 	
 	const date = new Date;

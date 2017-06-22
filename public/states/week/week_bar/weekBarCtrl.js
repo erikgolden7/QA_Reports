@@ -1,9 +1,9 @@
-angular.module('qaApp').controller('weekBarCtrl', function($scope, $http) {
+angular.module('qaApp').controller('weekBarCtrl', function($scope, $http, $state) {
 	
 	$scope.title = "Reports: This Week";
 	
 	$scope.reloadPage = () => {
-		window.location.reload();
+		$state.reload();
 	};
 	
 	const date = new Date;

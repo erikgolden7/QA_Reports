@@ -1,9 +1,7 @@
 <div class="report_box">
 	<div class="report_title">{{title}}</div>
-	<div class="row">
-		<button> < </button>
-		<button ui-sref="year">Line Graph</button>
-		<button> > </button>
-	</div>
+	<form class="menu_right">
+		<button class="menu_item" ui-sref="year">Line Graph</button>
+	</form>
 	<div><canvas id="yearChart" width="1000" height="450"></canvas></div>
 </div>

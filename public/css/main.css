@@ -169,15 +169,15 @@ figure2:hover+span {
 	}
 
 /*Top Center Tally Boxes*/
-.background {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-size: contain;
-	height: 100%;
-	width: 100%;
-	}
+/*.background {*/
+	/*display: flex;*/
+	/*flex-direction: column;*/
+	/*justify-content: center;*/
+	/*align-items: center;*/
+	/*background-size: contain;*/
+	/*height: 100%;*/
+	/*width: 100%;*/
+	/*}*/
 
 .tally_box {
 	margin: 10px 0 10px 0;
@@ -246,17 +246,27 @@ figure2:hover+span {
 /*Menu Box*/
 .menu {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
 	width: 300px;
 	height: auto;
-	margin-left: 10%;
 	padding: 6px 6px 7px 6px;
 	border: gray solid 1px;
 	border-radius: 7px;
 	background-color: #ebebeb;
 	}
+
+.menu_right {
+	display: flex;
+	position: absolute;
+	right: 11%;
+	justify-content: center;
+	height: auto;
+	padding: 6px 6px 7px 6px;
+	border: gray solid 1px;
+	border-radius: 7px;
+	background-color: #ebebeb;
+	}
+
 
 .menu_item {
 	display: flex;
@@ -264,7 +274,7 @@ figure2:hover+span {
 	align-items: center;
 	margin-left: 5px;
 	margin-right: 5px;
-	height: 30px;
+	height: 27px;
 	width: 100px;
 	padding: 0 5px 3px 5px;
 	font-weight: 600;
@@ -289,19 +299,20 @@ figure2:hover+span {
 /*Reports Box*/
 .outer_box {
 	display: flex;
-	align-items: center;
+	/*align-items: center;*/
 	flex-direction: column;
 	width: auto;
 	height: auto;
 	border: gray solid 1px;
 	border-radius: 7px;
-	margin: 5px 10% 0 10%;
+	margin: 12px 10% 0 10%;
 	background-color: #efefef;
-	padding: 10px 20px 20px 20px;
+	padding: 10px 10px 10px 10px;
 	}
 
 .report_title {
 	padding-bottom: 5px;
+	/*margin-top: -40px;*/
 	}
 
 .report_box {
@@ -315,6 +326,11 @@ figure2:hover+span {
 .row {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	width: 80%;
+	height: auto;
+	/*background-color: black;*/
 	}
 
 .search_settings {
@@ -325,7 +341,13 @@ figure2:hover+span {
 	padding-top: 5px;
 	}
 
-.text {
-	font-size: 12px;
-	
+.days_since_box {
+	margin: 10px 0 10px 0;
+	font-size: 28px;
+	width: 300px;
+	padding: 10px;
+	border: solid #818181 1px;
+	border-radius: 5px;
+	background-color: #e1ebe0;
 	}
+	

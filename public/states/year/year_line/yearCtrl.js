@@ -1,4 +1,4 @@
-angular.module('qaApp').controller('yearCtrl', function($scope, $http) {
+angular.module('qaApp').controller('yearCtrl', function($scope, $http, $state) {
 	
 	$scope.title = "Reports: Year Time";
 	
@@ -7,7 +7,7 @@ angular.module('qaApp').controller('yearCtrl', function($scope, $http) {
 	const month = date.getMonth();
 	
 	$scope.reloadPage = () => {
-		window.location.reload();
+		$state.reload();
 	};
 	
 	function createChart(month) {

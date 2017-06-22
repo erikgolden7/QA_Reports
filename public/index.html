@@ -37,33 +37,46 @@
 			</div>
 		</div>
 		
+
+		
+		
+		
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
-		<div class="background">
-			<div ng-cloak class="tally_box">
-				<div class="tally_item_top">
-					<div> Total Catastrophes Averted:</div>
-					<div>{{totalCount}}</div>
-				</div>
-				<div class="tally_item_bottom">
-					<div>Bugs Squished Today:</div>
-					<div>{{todayCount}}</div>
+		
+		<div class="row">
+			
+			<div class="background">
+				<div ng-cloak class="tally_box">
+					<div class="tally_item_top">
+						<div> Total Catastrophes Averted:</div>
+						<div>{{totalCount}}</div>
+					</div>
+					<div class="tally_item_bottom">
+						<div>Bugs Squished Today:</div>
+						<div>{{todayCount}}</div>
+					</div>
 				</div>
 			</div>
+			
+			<div class="buttons">
+				<div class="increment" ng-click="increment()"></div>
+				<div class="decrement" ng-click="decrement()"></div>
+			</div>
+			
+			<div class="days_since_box">
+				{{daysSince}}
+			</div>
+
 		</div>
 		
-		<div class="buttons">
-			<div class="increment" ng-click="increment()"></div>
-			<div class="decrement" ng-click="decrement()"></div>
-		</div>
-		
-		<div class="menu">
-			<div ui-sref="day" class="menu_item" ng-click="reloadPage()">Day</div>
-			<div ui-sref="week" class="menu_item" ng-click="reloadPage()">Week</div>
-			<div ui-sref="month" class="menu_item" ng-click="reloadPage()">Month</div>
-			<div ui-sref="year" class="menu_item" ng-click="reloadPage()">Year</div>
-		</div>
 		
 		<div class="outer_box">
+			<div class="menu">
+				<div ui-sref="day" class="menu_item" ng-click="reloadPage()">Day</div>
+				<div ui-sref="week" class="menu_item" ng-click="reloadPage()">Week</div>
+				<div ui-sref="month" class="menu_item" ng-click="reloadPage()">Month</div>
+				<div ui-sref="year" class="menu_item" ng-click="reloadPage()">Year</div>
+			</div>
 			<ui-view></ui-view>
 		</div>
 		

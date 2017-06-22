@@ -1,7 +1,7 @@
-angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
+angular.module('qaApp').controller('dayBarCtrl', function($scope, $http, $state) {
 	
 	$scope.reloadPage = () => {
-		window.location.reload();
+		$state.reload();
 	};
 	
 	$scope.title = "Reports: Today";
@@ -10,15 +10,13 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
 	const day = date.getDate();
 	
 	$scope.sayDate = function() {
-		console.log($scope.inputDate);
 		var inputDate = $scope.inputDate;
-		console.log(inputDate);
-
-		var inputYear = inputDate.getFullYear();
-		var inputMonth = inputDate.getMonth();
-		var inputDay = inputDate.getDate();
-
-		console.log(inputMonth, inputDay, inputYear);
+		if (inputDate !== undefined) {
+			var inputYear = inputDate.getFullYear();
+			var inputMonth = inputDate.getMonth();
+			var inputDay = inputDate.getDate();
+		}else { return }
+		
 		
 		$scope.title = "Reports: Today";
 		const hours = ["1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am", "12am", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm", "12pm"];
@@ -26,7 +24,6 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
 		const day = date.getDate();
 		
 		function createChart(inputMonth, inputDay, inputYear) {
-			console.log(inputMonth, inputDay, inputYear);
 			$http ({
 				method: 'GET',
 				url: '/getInputDayData',
@@ -36,7 +33,6 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http) {
 					'inputYear' : inputYear
 				}
 			}).then(function successCallback(res) {
-				console.log("day success", res);
 				var arr = [];
 				for (let i = 1; i <= 24; i++) {
 					var count = 0;
