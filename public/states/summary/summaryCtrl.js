@@ -63,7 +63,8 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 							"#9b59b6",
 							"#f1c40f"
 						],
-						data: arr
+						data: arr,
+						responsive: false
 					}]
 				}
 			});
