@@ -101,7 +101,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	
 	
-	var initialDate = new Date(2012, 11, 1); // Attention: month is zero-based
+	var initialDate = new Date(2017, 5, 1); // Attention: month is zero-based
 	var now = Date.now();
 	var difference = now - initialDate;
 	var millisecondsPerDay = 24 * 60 * 60 * 1000;
