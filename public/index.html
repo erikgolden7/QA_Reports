@@ -23,56 +23,49 @@
 			</div>
 		</div>
 		
+		<div class="reset_btn" ng-click="sweet()"></div>
 		<div id="info" class="information"></div>
 		<div id="popup" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span><br/>
 				<h1 class="popup_header">Information</h1>
-				<p class="popup_center">QA Bug Reports is intended to help QA monitor the number of bugs discovered. The count can be incremented and decremented using the jolt arrows in the center of the page. Line graph reports for daily, weekly, monthly, and yearly bug statistics are available at the bottom of the page. Specific time frames can be searched within each report. The current number of sequential days without a customer complaint is displayed in the top right. This day streak can be reset with the red reset button. </p><br>
+				<p class="popup_center">QA Bug Reports is intended to help the QA team monitor the number of bugs discovered. The count can be incremented and decremented using the jolt arrows in the top center of the page. Graph reports for daily, weekly, monthly, and yearly statistics are available in the reports box. This box also includes a summary page containing various other statistics. Past daily, weekly, and monthly reports can be accessed through the date picker on the top center of each appropriate report. The current number of sequential days without a code red is displayed on the top right. This counter can be reset using the red reset button in the top right corner. </p><br>
 				<p><span class="popup_bold">Total Catastrophes Averted:</span> All time cumulative count of bugs discovered.</p><br>
 				<p><span class="popup_bold">Bugs Squished Today:</span> Bug count for the current day.</p><br>
+				<p><span class="popup_bold">Days Since Last Code Red:</span> This number increments daily and represents how many sequential days have passed with no code red bugs. It can be reset to zero using the red reset button in the top right corner.</p><br>
 				<p><span class="popup_bold">Daily Reports:</span> Daily reports are represented by 24 hours in a day.</p><br>
 				<p><span class="popup_bold">Weekly Reports:</span> Weekly reports are represented by days of the week.</p><br>
 				<p><span class="popup_bold">Monthly Reports:</span> Monthly reports are represented by 31 days in a month</p><br>
 				<p><span class="popup_bold">Yearly Reports:</span> Yearly reports is represented by 12 months in a year.</p><br>
+				<p><span class="popup_bold">Summary Reports:</span> Summary reports represent misc statistics about bug counts.</p><br>
 			</div>
 		</div>
 		
 		<h1 class="main_title">QA Bug Reports</h1><hr/>
 		<div class="row">
-			<!--<div class="row_left">-->
-				<div class="background">
-					<div ng-cloak class="tally_box">
-						<div class="tally_item_top">
-							<div> Total Catastrophes Averted:</div>
-							<div>{{totalCount}}</div>
-						</div>
-						<div class="tally_item_bottom">
-							<div>Bugs Squished Today:</div>
-							<div>{{todayCount}}</div>
-						</div>
+			<div class="background">
+				<div ng-cloak class="tally_box">
+					<div class="tally_item_top">
+						<div> Total Catastrophes Averted:</div>
+						<div>{{totalCount}}</div>
+					</div>
+					<div class="tally_item_bottom">
+						<div>Bugs Squished Today:</div>
+						<div>{{todayCount}}</div>
 					</div>
 				</div>
-				<div class="buttons">
-					<div class="increment" ng-click="increment()"></div>
-					<div class="decrement" ng-click="decrement()"></div>
-				</div>
-			<!--</div>-->
-			
+			</div>
+			<div class="buttons">
+				<div class="increment" ng-click="increment()"></div>
+				<div class="decrement" ng-click="decrement()"></div>
+			</div>
 			
 			<div ng-cloak class="tally_box">
 				<div class="tally_item_top">
-					<div> Days since last code red:</div>
+					<div> Days Since Last Code Red:</div>
 					<div>{{daysSince}}</div>
 				</div>
 			</div>
-			<!--<div class="row_right">-->
-				<!--<div class="days_since_box">-->
-					<!--<span class="days_since_text_sm">Days without A Customer Complaint:</span>-->
-					<!--<span ng-cloak class="days_since_text">{{daysSince}}</span>-->
-					<!--<div class="reset_btn" ng-click="sweet()"></div>-->
-				<!--</div>-->
-			<!--</div>-->
 		</div>
 		
 		<div class="outer_box">

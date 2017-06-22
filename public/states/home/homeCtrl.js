@@ -26,12 +26,14 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	};
 	getTodayCount(day, month, year);
 	
+	
 	let getTotalCount = () => {
 		homeService.getTotalCount().then((res, err) => {
 			$rootScope.totalCount = res.data[0].count;
 		});
 	};
 	getTotalCount(day, month, year, hour);
+	
 	
 	$scope.increment = () => {
 		const date = new Date;
@@ -45,8 +47,6 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		if ($scope.todayCount >= max) {
 			return;
 		}
-		
-		// Get the current day of the week in text format
 		(function() {
 			const days1 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 			Date.prototype.getDayName = function() {
@@ -55,15 +55,13 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		})();
 		const now = new Date();
 		const currentDay = now.getDayName();
-		
 		$scope.todayCount++;
 		$scope.totalCount++;
-			
 		homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour).then(function() {
 			$state.reload();
 		})
-
 	};
+	
 	
 	$scope.decrement = () => {
 		if ($scope.todayCount <= min) {
@@ -75,6 +73,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 			$state.reload();
 		});
 	};
+	
 	
 	//Popup Information Modal
 	const modal = document.getElementById('popup');
@@ -96,28 +95,23 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	};
 	
 	
-	
 	const getResetCount = (year, month, day) => {
-		console.log("getResetCount fired");
 		homeService.getResetCount(year, month, day).then((res, err) => {
 			const initialDate = new Date(res.data[0].year, res.data[0].month, res.data[0].day); // Attention: month is zero-based
 			const now = Date.now();
 			const difference = now - initialDate;
 			const millisecondsPerDay = 24 * 60 * 60 * 1000;
 			$scope.daysSince = Math.floor(difference / millisecondsPerDay);
-			console.log($scope.daysSince);
-			// homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour)
 		})
 	};
 	getResetCount(year, month, day);
 	
 	
-	
 	//Sweet alerts logic and settings
 	$scope.sweet = () => {
 		sweetAlert({
-				title: "Are you sure you want to reset the count?",
-				text: "This action cannot be undone.",
+				title: 'Do you want to reset the days since last code red counter?',
+				text: "Warning, This action cannot be undone!",
 				type: "warning",
 				showCancelButton: true,
 				confirmButtonColor: "#00a82d",
@@ -125,20 +119,13 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 				closeOnConfirm: true
 			},
 			() => {
-				const date = new Date;
-				const day = date.getDate(); //day of the month (1-31)
-				const month = date.getMonth(); //month of the year (0-11)
-				const year = date.getFullYear(); //4 digit year
-				
+			const date = new Date;
+			const day = date.getDate(); //day of the month (1-31)
+			const month = date.getMonth(); //month of the year (0-11)
+			const year = date.getFullYear(); //4 digit year
 			homeService.resetCounter(day, month, year).then(function() {
 				window.location.reload();
 			})
 		})
 	};
-	
-	
-	
-
-	
-	
 });

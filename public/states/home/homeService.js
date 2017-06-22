@@ -45,7 +45,6 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 	};
 	
 	this.getResetCount = (year, month, day) => {
-		console.log(year, month, day);
 		return $http({
 			method: 'GET',
 			url: '/getResetCount',

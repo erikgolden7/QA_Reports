@@ -8,7 +8,6 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 			method: 'GET',
 			url: '/getAllData'
 		}).then(function successCallback(res) {
-			console.log("day success", res.data);
 			const arr = [];
 			for (let i = 1; i <= res.data.length; i++) {
 				var mondayCount = 0;
@@ -49,12 +48,11 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 				arr.splice(5, 1, saturdayCount);
 				arr.splice(6, 1, sundayCount);
 			}
-			console.log(arr);
 			var ctx = document.getElementById("summaryChart").getContext('2d');
 			var summaryChart = new Chart(ctx, {
 				type: 'doughnut',
 				data: {
-					labels: ["M", "T", "W", "Th", "F"],
+					labels: ["Mon", "Tues", "Wed", "Thur", "Fri"],
 					datasets: [{
 						backgroundColor: [
 							"#2ecc71",
@@ -69,7 +67,7 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 				}
 			});
 		}, function errorCallback(res) {
-			console.log('month fail')
+			console.log('summary fail')
 		});
 	}
 	createChart();
