@@ -6,7 +6,6 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http, $stat
 		$state.reload();
 	};
 	
-	const days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30","31"];
 	const date = new Date;
 	const month = date.getMonth();
 	
@@ -18,7 +17,6 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http, $stat
 				'month': month
 			}
 		}).then(function successCallback(res) {
-			console.log("month success");
 			var arr = [];
 			for (let i = 1; i <= 31; i++) {
 				var count = 0;
@@ -62,11 +60,7 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http, $stat
 	
 	$scope.sayDate = function() {
 		var inputDate = $scope.inputDate;
-		console.log(inputDate);
-		
 		var inputMonth = inputDate.getMonth();
-		
-		console.log(inputMonth);
 		
 		function createChart(month) {
 			$http({
@@ -76,7 +70,6 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http, $stat
 					'month': month
 				}
 			}).then(function successCallback(res) {
-				console.log("month success");
 				var arr = [];
 				for (let i = 1; i <= 31; i++) {
 					var count = 0;
@@ -116,7 +109,6 @@ angular.module('qaApp').controller('monthBarCtrl', function($scope, $http, $stat
 				console.log('month fail')
 			});
 		}
-		
 		createChart(inputMonth);
 	}
 });

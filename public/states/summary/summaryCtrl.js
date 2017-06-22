@@ -2,7 +2,6 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 
 	$scope.title = "Summary Reports";
 	
-	
 	function createChart() {
 		$http({
 			method: 'GET',
@@ -71,5 +70,4 @@ angular.module('qaApp').controller('summaryCtrl', function($scope, $http) {
 		});
 	}
 	createChart();
-	
 });

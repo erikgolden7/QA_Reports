@@ -1,6 +1,6 @@
 angular.module('qaApp').controller('yearCtrl', function($scope, $http, $state) {
 	
-	$scope.title = "Reports: Year Time";
+	$scope.title = "Reports: This Year";
 	
 	const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const date = new Date;
@@ -18,7 +18,6 @@ angular.module('qaApp').controller('yearCtrl', function($scope, $http, $state) {
 				'month': month
 			}
 		}).then(function successCallback(res) {
-			console.log("year success");
 			var arr = [];
 			for (let i = 0; i < 12; i++) {
 				var count = 0;

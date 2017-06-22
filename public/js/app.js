@@ -59,5 +59,4 @@ angular.module('qaApp', ['ui.router']).config(function($stateProvider, $urlRoute
 		templateUrl: '../states/summary/summary.html',
 		controller: 'summaryCtrl'
 	})
-	
 });

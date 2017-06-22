@@ -18,7 +18,6 @@ angular.module('qaApp').controller('yearBarCtrl', function($scope, $http, $state
 				'month': month
 			}
 		}).then(function successCallback(res) {
-			console.log("year success");
 			var arr = [];
 			for (let i = 0; i < 12; i++) {
 				var count = 0;

@@ -31,19 +31,6 @@ app.get('/getTotalCount', function(req, res) {
 	})
 });
 
-app.post('/incrementCount', function(req, res) {
-	let body = req.body;
-	db.incrementCount([body.today, body.total, body.day, body.currentDay, body.week, body.weekDay, body.month, body.year, body.hour], (err, result) => {
-		res.send(result)
-	})
-});
-
-app.delete('/decrementCount', function(req, res) {
-	db.decrementCount((err, result) => {
-		res.send(result)
-	})
-});
-
 app.get('/getDayData', function(req, res) {
 	db.getDayData([req.query.day], (err, result) => {
 		res.send(result);
@@ -86,6 +73,12 @@ app.get('/getResetCount', function(req, res) {
 	})
 });
 
+app.get('/getAllData', function(req, res) {
+	db.getAllData((err, result) => {
+		res.send(result);
+	})
+});
+
 app.put('/resetCounter',(req, res) => {
 	let body = req.body;
 	db.resetCounter([body.day, body.month, body.year], (err, result) => {
@@ -93,9 +86,16 @@ app.put('/resetCounter',(req, res) => {
 	})
 });
 
-app.get('/getAllData', function(req, res) {
-	db.getAllData((err, result) => {
-		res.send(result);
+app.post('/incrementCount', function(req, res) {
+	let body = req.body;
+	db.incrementCount([body.today, body.total, body.day, body.currentDay, body.week, body.weekDay, body.month, body.year, body.hour], (err, result) => {
+		res.send(result)
+	})
+});
+
+app.delete('/decrementCount', function(req, res) {
+	db.decrementCount((err, result) => {
+		res.send(result)
 	})
 });
 

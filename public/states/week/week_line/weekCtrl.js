@@ -6,8 +6,6 @@ $scope.title = "Reports: This Week";
 		$state.reload();
 	};
 
-const date = new Date;
-const day = date.getDate();
 	
 	// Get the current day of the week in text format
 	(function() {
@@ -38,7 +36,6 @@ const day = date.getDate();
 				'week': week
 			}
 		}).then(function successCallback(res) {
-			console.log("week success");
 			const arr = [];
 			for (let i = 1; i < 7; i++) {
 				var mondayCount = 0;
@@ -113,11 +110,7 @@ const day = date.getDate();
 
 	
 	$scope.getWeek = function() {
-		console.log($scope.inputDate);
 		var inputDate = $scope.inputDate;
-		console.log(inputDate);
-		console.log(new Date());
-		
 		var weekNum = getWeekNumber(inputDate);
 		
 		// Create the chart
@@ -129,7 +122,6 @@ const day = date.getDate();
 					'week': week
 				}
 			}).then(function successCallback(res) {
-				console.log("week success");
 				const arr = [];
 				for (let i = 1; i < 7; i++) {
 					var mondayCount = 0;

@@ -29,7 +29,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	let getTotalCount = () => {
 		homeService.getTotalCount().then((res, err) => {
-			$rootScope.totalCount = res.data[0].count;
+			$rootScope.totalCount = res.data[0].count - 1; // -1 is for the added db row for the reset counter
 		});
 	};
 	getTotalCount(day, month, year, hour);
