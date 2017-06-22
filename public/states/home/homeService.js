@@ -43,4 +43,29 @@ angular.module('qaApp').service('homeService', function($http, $q) {
 			url: '/decrementCount',
 		})
 	};
+	
+	this.getResetCount = (year, month, day) => {
+		console.log(year, month, day);
+		return $http({
+			method: 'GET',
+			url: '/getResetCount',
+			params: {
+				'year' : year,
+				'month' : month,
+				'day' : day
+			}
+		})
+	};
+	
+	this.resetCounter = (day, month, year) => {
+		return $http({
+			method: 'PUT',
+			url: '/resetCounter',
+			data: {
+				'day': day,
+				'month': month,
+				'year': year
+			}
+		})
+	};
 });

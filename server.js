@@ -80,6 +80,20 @@ app.get('/getYearData', function(req, res) {
 	})
 });
 
+app.get('/getResetCount', function(req, res) {
+	// console.log(req);
+	db.getResetCount((err, result) => {
+		res.send(result);
+	})
+});
+
+app.put('/resetCounter',(req, res) => {
+	let body = req.body;
+	db.resetCounter([body.day, body.month, body.year], (err, result) => {
+		res.send(result);
+	})
+});
+
 app.listen(config.port, function() {
 	console.log('Listening to port:', config.port)
 });

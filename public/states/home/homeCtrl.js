@@ -13,8 +13,8 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		d = new Date(+d);
 		d.setHours(0,0,0,0);
 		d.setDate(d.getDate() + 4 - (d.getDay()||7));
-		var yearStart = new Date(d.getFullYear(),0,1);
-		var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+		const yearStart = new Date(d.getFullYear(),0,1);
+		const weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
 		return weekNo;
 	}
 	
@@ -48,7 +48,7 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 		
 		// Get the current day of the week in text format
 		(function() {
-			var days1 = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			const days1 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 			Date.prototype.getDayName = function() {
 				return days1[ this.getDay() ];
 			};
@@ -97,15 +97,46 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 	
 	
 	
+	const getResetCount = (year, month, day) => {
+		console.log("getResetCount fired");
+		homeService.getResetCount(year, month, day).then((res, err) => {
+			const initialDate = new Date(res.data[0].year, res.data[0].month, res.data[0].day); // Attention: month is zero-based
+			const now = Date.now();
+			const difference = now - initialDate;
+			const millisecondsPerDay = 24 * 60 * 60 * 1000;
+			$scope.daysSince = Math.floor(difference / millisecondsPerDay);
+			console.log($scope.daysSince);
+			// homeService.increment($scope.todayCount, $scope.totalCount, day, currentDay, week, weekDay, month, year, hour)
+		})
+	};
+	getResetCount(year, month, day);
 	
 	
 	
+	//Sweet alerts logic and settings
+	$scope.sweet = () => {
+		sweetAlert({
+				title: "Are you sure you want to reset the count?",
+				text: "This action cannot be undone.",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#00a82d",
+				confirmButtonText: "Sadly, yes",
+				closeOnConfirm: true
+			},
+			() => {
+				const date = new Date;
+				const day = date.getDate(); //day of the month (1-31)
+				const month = date.getMonth(); //month of the year (0-11)
+				const year = date.getFullYear(); //4 digit year
+				
+				homeService.resetCounter(day, month, year);
+			});
+	};
 	
-	var initialDate = new Date(2017, 5, 1); // Attention: month is zero-based
-	var now = Date.now();
-	var difference = now - initialDate;
-	var millisecondsPerDay = 24 * 60 * 60 * 1000;
-	$scope.daysSince = Math.floor(difference / millisecondsPerDay);
+	
+	
+
 	
 	
 });

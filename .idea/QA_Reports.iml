@@ -14,5 +14,6 @@
     <orderEntry type="library" name="Chart.bundle" level="application" />
     <orderEntry type="library" name="Chart.bundle" level="application" />
     <orderEntry type="library" name="angular-datepicker" level="application" />
+    <orderEntry type="library" name="sweetalert" level="application" />
   </component>
 </module>
