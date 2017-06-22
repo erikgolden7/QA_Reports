@@ -81,7 +81,6 @@ app.get('/getYearData', function(req, res) {
 });
 
 app.get('/getResetCount', function(req, res) {
-	// console.log(req);
 	db.getResetCount((err, result) => {
 		res.send(result);
 	})
@@ -90,6 +89,12 @@ app.get('/getResetCount', function(req, res) {
 app.put('/resetCounter',(req, res) => {
 	let body = req.body;
 	db.resetCounter([body.day, body.month, body.year], (err, result) => {
+		res.send(result);
+	})
+});
+
+app.get('/getAllData', function(req, res) {
+	db.getAllData((err, result) => {
 		res.send(result);
 	})
 });

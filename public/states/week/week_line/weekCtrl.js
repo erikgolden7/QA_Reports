@@ -90,7 +90,7 @@ const day = date.getDate();
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
-						backgroundColor: 'rgba(72,126,173,.3)',
+						backgroundColor: 'rgba(73, 125, 175, .5)',
 						borderColor: 'rgba(108,108,108,1)',
 						borderWidth: 1
 					}]
@@ -181,7 +181,7 @@ const day = date.getDate();
 						datasets: [{
 							label: 'Bugs Found',
 							data: arr,
-							backgroundColor: 'rgba(72,126,173,.3)',
+							backgroundColor: 'rgba(73, 125, 175, .5)',
 							borderColor: 'rgba(108,108,108,1)',
 							borderWidth: 1
 						}]

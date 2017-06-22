@@ -38,7 +38,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http, $state) 
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
-						backgroundColor: 'rgba(72,126,173,.4)',
+						backgroundColor: 'rgba(73, 125, 175, .5)',
 						borderColor: 'rgba(108,108,108,1)',
 						borderWidth: 1
 					}]
@@ -96,7 +96,7 @@ angular.module('qaApp').controller('monthCtrl', function($scope, $http, $state) 
 						datasets: [{
 							label: 'Bugs Found',
 							data: arr,
-							backgroundColor: 'rgba(72,126,173,.4)',
+							backgroundColor: 'rgba(73, 125, 175, .5)',
 							borderColor: 'rgba(108,108,108,1)',
 							borderWidth: 1
 						}]

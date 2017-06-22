@@ -53,7 +53,7 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http, $state)
 						datasets: [{
 							label: 'Bugs Found',
 							data: arr,
-							backgroundColor: 'rgba(171, 214, 174,0.6)',
+							backgroundColor: 'rgba(58, 175, 85, 0.4)',
 							borderColor: 'rgba(108,108,108,1)',
 							borderWidth: 1
 						}]
@@ -104,7 +104,7 @@ angular.module('qaApp').controller('dayBarCtrl', function($scope, $http, $state)
 					datasets: [{
 						label: 'Bugs Found',
 						data: arr,
-						backgroundColor: 'rgba(171, 214, 174,0.6)',
+						backgroundColor: 'rgba(58, 175, 85, 0.4)',
 						borderColor: 'rgba(108,108,108,1)',
 						borderWidth: 1
 					}]
