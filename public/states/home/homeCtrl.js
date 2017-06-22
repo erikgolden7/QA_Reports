@@ -130,8 +130,10 @@ angular.module('qaApp').controller('homeCtrl', function($scope, $rootScope, home
 				const month = date.getMonth(); //month of the year (0-11)
 				const year = date.getFullYear(); //4 digit year
 				
-				homeService.resetCounter(day, month, year);
-			});
+			homeService.resetCounter(day, month, year).then(function() {
+				window.location.reload();
+			})
+		})
 	};
 	
 	
